@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+
+    <!-- remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- remix icon --> 
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- bootstrap cdn -->
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- bootstrap icon -->
+
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+
+    <!-- gsap -->
+
+    <!-- slick css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- slick css -->
+
+    <!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jquery CDN -->
+
+    <!-- aos css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- aos css-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- animate css -->
+
+    <!-- Font Awesome Pro -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+    <link rel="stylesheet" href="gallery.css">
+
+</head>
+
+<body>
+
+    <!-- back to top button -->
+    <a id="button"></a>
+    <!-- back to top button -->
+
+    <!-- menu-bar -->
+    <section>
+        <div class="menu-bar">
+            <div class="menu-close-main">
+                <a id="menu-close-btn" href=""><i class="fa-thin fa-circle-xmark"></i></a>
+            </div>
+            <ul class="menu-bar-navigation mb-0 ">
+                <li class="mt-4"><a href="">Portfolio </a></li>
+                <li class="mt-4"><a href="">About</a></li>
+                <li class="mt-4"><a href="scscsd.html">Gallery</a></li>
+                <li class="mt-4"><a href="">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- menu-bar -->
+
+    <!-- Navbar (Persistent) -->
+    <div class="navbar-main">
+        <div class="container-fluid">
+            <div class="row py-4 d-flex justify-content-center align-items-center">
+                <div class="col-lg-3 col-md-11 col-10 d-flex justify-content-center">
+                    <a class="logo mb-0 text-dark text-center" href="index.html">Arihant Studio</a>
+
+                </div>
+                <div class="col-lg-6 d-lg-block d-md-none d-none ">
+                    <ul class="d-flex justify-content-center gap-5 mb-0 me-5 navigation">
+                        <li><a class="text-dark" href="./index.html">Home</a></li>
+                        <li><a class="text-dark" href="">About</a></li>
+                        <li><a class="text-dark" href="./portfolio.html">Portfolio</a></li>
+                        <li><a class="text-dark" href="scscsd.html">Gallery</a></li>
+                        <li><a class="text-dark" href="">Contact</a></li>
+                        <!-- <li><a class="" href=""><i id="list-icon" class="fa-solid fa-list-timeline"></i></a></li> -->
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-1 col-1">
+                    <ul class="d-lg-flex d-md-none d-none justify-content-end gap-3 mb-0 me-4 social-links">
+                        <li><a class="text-dark" href=""><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a class="text-dark" href=""><i class="fa-brands fa-whatsapp"></i></a></li>
+                        <li><a class="text-dark" href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    </ul>
+                    <div class="anchor d-lg-none">
+                        <a id="menu-btn" href=""><i class="mb-0 text-dark ri-menu-3-line"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid-container">
+            <div class="column">
+                <img class="mt-5" src="./imgaes/aangi-sinlge-1.jpg" onclick="openLightbox(this.src)">
+                <img class="mt-3" src="./imgaes/aagam-aangi-4.jpg" onclick="openLightbox(this.src)">
+                <img class="mt-3" src="./imgaes/aagam-aangi-5.jpg" onclick="openLightbox(this.src)">
+                <img class="mt-3" src="./imgaes/aagam-aangi.jpg" onclick="openLightbox(this.src)">
+
+            </div>
+
+            <div class="column">
+                <img class="mt-5" src="./imgaes/aagam-aangi-2.jpg" onclick="openLightbox(this.src)">
+                <img class="mt-3" src="./imgaes/aagam-aangi-testimonials-2.jpg" onclick="openLightbox(this.src)">
+                <img class="mt-3" src="./imgaes/aagam-aangi-1.jpg" onclick="openLightbox(this.src)">
+                <img class="mt-3" src="./imgaes/aagam-aangi-3.jpg" onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="column">
+                <img class="mt-3" src="./imgaes/gallery-7.jpg" onclick="openLightbox(this.src)">
+                <img class="mt-3"
+                    src="./imgaes/gallery-17.jpg"
+                    onclick="openLightbox(this.src)">
+                <img class="mt-3"
+                    src="./imgaes/divya-karina-1.jpg"
+                    onclick="openLightbox(this.src)">
+                <img class="mt-3"
+                    src="./imgaes/divya-karina-3.jpg"
+                    onclick="openLightbox(this.src)">
+                <!-- <img class="mt-3" src="./imgaes/gallery-15.jpg" onclick="openLightbox(this.src)"> -->
+
+            </div>
+
+            <div class="column">
+                <img class="mt-3" src="./imgaes/gallery-10.jpg" onclick="openLightbox(this.src)">
+                <img class="mt-3"
+                    src="./imgaes/gallery-16.jpg"
+                    onclick="openLightbox(this.src)">
+                <img class="mt-3"
+                    src="./imgaes/gallery-18.jpg"
+                    onclick="openLightbox(this.src)">
+                <img class="mt-3"
+                    src="./imgaes/divya-karina-2.jpg"
+                    onclick="openLightbox(this.src)">
+                <img class="mt-3"
+                    src="./imgaes/divya-karina-4.jpg"
+                    onclick="openLightbox(this.src)">
+                <img class="mt-3" src="./imgaes/karina-gallery.jpg" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img">
+    </div> -->
+
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" onclick="closeLightbox()"><i class="fa-light fa-xmark"></i></button>
+        <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
+        <img id="lightbox-img">
+        <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
+
+    </div>
+
+    <script>
+        let images = [];
+        let currentIndex = 0;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            images = Array.from(document.querySelectorAll(".grid-container img")).map(img => img.src);
+        });
+
+        function openLightbox(src) {
+            currentIndex = images.indexOf(src);
+            const lightboxImg = document.getElementById("lightbox-img");
+
+            lightboxImg.src = src;
+            lightboxImg.classList.remove("fade-out");
+            lightboxImg.classList.add("fade-in");
+
+            document.getElementById("lightbox").style.display = "flex";
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        function changeImage(direction) {
+            const lightboxImg = document.getElementById("lightbox-img");
+
+            // Apply fade-out effect before changing the image
+            lightboxImg.classList.remove("fade-in");
+            lightboxImg.classList.add("fade-out");
+
+            setTimeout(() => {
+                currentIndex += direction;
+                if (currentIndex < 0) currentIndex = images.length - 1;
+                if (currentIndex >= images.length) currentIndex = 0;
+
+                lightboxImg.src = images[currentIndex];
+
+                // Apply fade-in effect after changing the image
+                lightboxImg.classList.remove("fade-out");
+                lightboxImg.classList.add("fade-in");
+            }); // Matches the CSS transition duration
+        }
+
+
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- back to top -->
+    <script>// back to top button
+        var btn = $('#button');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
+        // back to top button
+
+
+    </script>
+    <!-- back to top -->
+
+
+    <!-- navbar script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("scroll", function () {
+                let navbar = document.querySelector(".navbar-main");
+                if (window.scrollY > 50) {
+                    navbar.classList.add("navbar-scroll");
+                } else {
+                    navbar.classList.remove("navbar-scroll");
+
+                }
+                if (window.scrollY > 650) {
+                    navbar.classList.add("navbar-scroll-1");
+
+                } else {
+                    navbar.classList.remove("navbar-scroll-1");
+
+                }
+                if (window.scrollY > 1330) {
+                    navbar.classList.add("navbar-scroll-2");
+
+                } else {
+                    navbar.classList.remove("navbar-scroll-2");
+
+                }
+                if (window.scrollY > 4030) {
+                    navbar.classList.add("navbar-scroll-3");
+
+                } else {
+                    navbar.classList.remove("navbar-scroll-3");
+
+                }
+
+
+            });
+        });
+    </script>
+    <!-- navbar script -->
+
+
+
+    <!-- menu bar script -->
+    <script>
+        $(document).ready(function () {
+            $("#menu-btn").click(function () {
+                $(".menu-bar").addClass("transform");
+                return false;
+            });
+
+            $("#menu-close-btn").click(function () {
+                $(".menu-bar").removeClass("transform");
+                return false;
+            });
+        });
+    </script>
+    <!-- menu bar script -->
+
+</body>
+
+</html>

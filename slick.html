@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carousel with Autoplay Video</title>
+
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .carousel div {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+
+    .carousel img,
+    .carousel video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slick-slide {
+      height: 100vh !important;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slick-prev,
+    .slick-next {
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: white;
+      font-size: 20px;
+    }
+    /* Properly position the arrows inside the carousel */
+.slick-prev {
+  left: 20px !important;
+}
+
+.slick-next {
+  right: 20px !important;
+}
+
+/* Make sure arrows are vertically centered */
+.slick-prev,
+.slick-next {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="carousel">
+    <div>
+      <img src="https://picsum.photos/1920/1080?random=1" alt="Image 1" />
+    </div>
+    <div>
+      <video muted playsinline preload="auto">
+        <source src="./videos/Parth & Niki's teaser.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div>
+      <video muted  playsinline preload="auto">
+        <source src="./videos/WEDDING HIGHLIGHT- Parth & Nishita wn.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div>
+      <img src="https://picsum.photos/1920/1080?random=2" alt="Image 2" />
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Slick JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const $carousel = $('.carousel');
+
+      $carousel.slick({
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        arrows: true,
+        dots: true,
+        speed: 800,
+        pauseOnHover: false
+      });
+
+      // On slide change, pause any playing video
+      $carousel.on('beforeChange', function () {
+        $('video').each(function () {
+          this.pause();
+        });
+      });
+
+      // After slide changes, play video if it exists
+      $carousel.on('afterChange', function (event, slick, currentSlide) {
+        const currentSlideEl = slick.$slides.get(currentSlide);
+        const video = $(currentSlideEl).find('video').get(0);
+
+        if (video) {
+          // Pause autoplay while video is playing
+          slick.slickPause();
+          video.currentTime = 0;
+
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.then(() => {
+              // Resume carousel after video ends
+              video.onended = () => {
+                slick.slickPlay();
+              };
+            }).catch(error => {
+              console.log("Autoplay error:", error);
+              slick.slickPlay(); // fallback to continue autoplay
+            });
+          }
+        } else {
+          slick.slickPlay(); // resume autoplay for image slides
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

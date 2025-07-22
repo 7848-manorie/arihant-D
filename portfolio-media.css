@@ -1,0 +1,80 @@
+@media (max-width: 1199px) {
+  .nav-pills .nav-link {
+    font-size: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .nav-pills .nav-link {
+    font-size: 12px;
+  }
+  .wedding-port .wedding-button {
+    font-size: 19px;
+  }
+}
+@media (max-width: 768px) {
+  .nav-pills .nav-link {
+    font-size: 17px;
+  }
+  .insta-img img {
+    /* height: 269.797px; */
+    width: 50% !important;
+  }
+  .footer .list ul li {
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-family: "Jost";
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 36px !important;
+    text-align: center;
+  }
+}
+@media (max-width: 575px) {
+  .nav-pills .nav-link {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 476px) {
+  .instagram h2 {
+    font-size: 46px !important;
+  }
+  .insta-img img {
+    /* height: 269.797px; */
+    width: 100% !important;
+    /* height: 400px; */
+    /* padding: 0px; */
+  }
+}
+@media (max-width: 425px) {
+  .nav-pills .nav-link {
+    font-size: 16px !important;
+    padding: 8px;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+}
+@media (max-width: 375px) {
+  .nav-item {
+    text-align: center;
+  }
+  .nav-link {
+    font-size: 14px !important;
+    padding: 8px;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+}
+@media (max-width: 320px) {
+  .nav-item {
+    text-align: center;
+  }
+
+  .nav-pills .nav-link {
+    font-size: 14px !important;
+    padding: 6px;
+    margin-left: 4px !important;
+    margin-right: 4px !important;
+  }
+}

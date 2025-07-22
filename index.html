@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+
+    <!-- remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- remix icon -->
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- bootstrap cdn -->
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+
+    <!-- bootstrap icon -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <!-- bootstrap icon -->
+
+    <!-- gsap -->
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/ScrollTrigger.min.js"></script>
+    <script src="./js/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+    <script src="./js/MotionPathPlugin.min.js"></script>
+
+    <!-- gsap -->
+
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <!-- slick css -->
+
+    <!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jquery CDN -->
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- aos css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- aos css-->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- animate css -->
+
+    <!-- Font Awesome Pro -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="./css/owl.carousel.css">
+    <link rel="stylesheet" href="./css/plyr.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <!-- <link rel="stylesheet" href="./css/all.css"> -->
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+
+</head>
+
+<body id="text" class="loading">
+    <div class="loader">
+        <div class="body-loader">
+            <video autoplay muted>
+                <source src="./videos/Final Comp-1.mp4">
+            </video>
+        </div>
+    </div>
+    <!-- loader  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Detect if the page was refreshed
+        const navigationType = performance.getEntriesByType("navigation")[0]?.type;
+
+        $(document).ready(function () {
+            const loaderAlreadyShown = sessionStorage.getItem('loaderShown');
+
+            if (navigationType === 'reload' || !loaderAlreadyShown) {
+                // Show loader on refresh or first load
+                $(".loader, .body-loader").show();
+                $("body").addClass("loading");
+
+                setTimeout(function () {
+                    $(".loader, .body-loader").fadeOut(500);
+                    $("body").removeClass("loading");
+                    sessionStorage.setItem('loaderShown', 'true'); // Mark as shown
+                }, 6000);
+            } else {
+                // Hide loader if navigating between pages
+                $(".loader, .body-loader").hide();
+                $("body").removeClass("loading");
+            }
+        });
+    </script>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- Your website content here -->
+
+            <!-- back to top button -->
+            <a id="button"></a>
+            <!-- back to top button -->
+
+            <!-- banner -->
+            <!-- <section>
+         <div class="banner-main">
+            <div class="container-fluid">
+                <div class="row py-3 d-flex align-items-center">
+                    <div class="col-4">
+
+                    </div>
+                    <div class="col-4 d-flex justify-content-center">
+                        <a class="logo" href="">Arihant Studio</a>
+                    </div>
+                    <div class="col-4">
+                        <ul class="d-flex justify-content-end gap-3 me-4 social-links">
+                            <li><a href=""><i class="ri-instagram-line"></i></a></li>
+                            <li><a href=""><i class="ri-whatsapp-line"></i></a></li>
+                            <li><a href=""><i class="ri-facebook-fill"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border-main"></div>
+                        <ul class="d-flex justify-content-center gap-4 navbar-main">
+                            <li><a href="">PORTFOLIO</a></li>
+                            <li><a href="">TIPS</a></li>
+                            <li><a href="">ABOUT</a></li>
+                            <li><a href="">PRICING</a></li>
+                            <li><a href="">WORKSHOPS</a></li>
+                            <li><a href="">SHOP</a></li>
+                            <li><a href="">CONTACT</a></li>
+                            <li><a href="">BLOG</a></li>
+                            <li><a href="">PROOFING GALLERY</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p>I don’t take a photograph. <br> I ask quietly to borrow it.</p>
+         </div>
+          </section> -->
+            <!-- banner -->
+
+            <!-- menu-bar -->
+            <section>
+                <div class="menu-bar">
+                    <div class="menu-close-main">
+                        <a id="menu-close-btn" href=""><i class="fa-thin fa-circle-xmark"></i></a>
+                    </div>
+                    <ul class="menu-bar-navigation mb-0 ">
+                        <li class="mt-4 text-center"><a href="portfolio.html">Portfolio </a></li>
+                        <li class="mt-4 text-center"><a href="about.html">About</a></li>
+                        <li class="mt-4 text-center"><a href="gallery.html">Gallery</a></li>
+                        <li class="mt-4 text-center"><a href="">Contact</a></li>
+                        <li class="mt-4 text-center"><a href=""><i class="fa-brands fa-instagram"></i>
+                            </a></li>
+                        <li><a href="">Get in touch</a></li>
+                    </ul>
+                </div>
+            </section>
+            <!-- menu-bar -->
+
+            <!-- Navbar (Persistent) -->
+            <div class="navbar-main">
+                <div class="container-fluid">
+                    <div class="row py-4 d-flex justify-content-center align-items-center">
+                        <div class="col-lg-3 col-md-11 col-10 d-flex justify-content-center">
+                            <a class="logo mb-0 text-dark  text-center" href="index.html">Arihant Studio</a>
+
+                        </div>
+                        <div class="col-lg-6 d-lg-block d-md-none d-none ">
+                            <ul class="d-flex justify-content-center gap-5 mb-0 me-5 navigation">
+                                <li><a class="text-dark" href="./index.html">Home</a></li>
+                                <li><a class="text-dark" href="./about.html">About</a></li>
+                                <li><a class="text-dark" href="./portfolio.html">Portfolio</a></li>
+                                <li><a class="text-dark" href="gallery.html">Gallery</a></li>
+                                <li><a class="text-dark" href="">Contact</a></li>
+                                <!-- <li><a class="" href=""><i id="list-icon" class="fa-solid fa-list-timeline"></i></a></li> -->
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-1">
+                            <ul
+                                class="d-lg-flex d-md-none d-none justify-content-end gap-3 mb-0 me-4 social-links align-items-center">
+                                <li><a target="_blank" class="text-dark"
+                                        href="https://www.instagram.com/arihantstudio.in/"> <i
+                                            class="ri-instagram-line"></i></a></li>
+                                <li><a class="text-dark" href=""><i class="fa-brands fa-whatsapp"></i></a></li>
+                                <li><a target="_blank" class="text-dark"
+                                        href="https://www.youtube.com/@arihantstudiosurat"><i
+                                            class="ri-youtube-line"></i></a></li>
+                            </ul>
+                            <div class="anchor d-lg-none">
+                                <a id="menu-btn" href=""><i class="mb-0 text-dark ri-menu-3-line"></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel -->
+            <div class="carousel">
+
+                <div>
+                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi.jpg?updatedAt=1753171685636" alt="">
+                </div>
+                <div>
+                    <video>
+                        <source
+                            src="https://ik.imagekit.io/dqel2bwws/Parth%20&%20Niki's%20teaser.mp4?updatedAt=1753167450727"
+                            type="video/mp4" />
+                        <button class="mute-toggle">🔇</button>
+                    </video>
+                </div>
+                <div>
+                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/insta-1.jpg?updatedAt=1753171735096" alt="Image 2" />
+                </div>
+                <div>
+                    <video>
+                        <source src="https://ik.imagekit.io/dqel2bwws/wedding-highlight-parth-nishita-wn_Ly9PNvVy.mp4?updatedAt=1753170122335" type="video/mp4" />
+                        <button class="mute-toggle">🔇</button>
+                    </video>
+                </div>
+                <div>
+                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-11.jpg?updatedAt=1753171728721" alt="Image 2" />
+                </div>
+            </div>
+
+            <!-- jQuery -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+            <!-- Slick JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    const $carousel = $('.carousel');
+
+                    $carousel.slick({
+                        infinite: true,
+                        autoplay: true,
+                        autoplaySpeed: 7000,
+                        arrows: false,
+                        dots: true,
+                        speed: 800,
+                        pauseOnHover: false,
+                        // prevArrow: '<button type="button" class="slick-prev"><i class="fa-brands fa-searchengin"></i></button>',
+                        // nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>'
+                    });
+
+                    // Pause all carousel videos before slide change
+                    $carousel.on('beforeChange', function () {
+                        $carousel.find('video').each(function () {
+                            this.pause();
+                        });
+                    });
+
+                    // Play video after slide change
+                    $carousel.on('afterChange', function (event, slick, currentSlide) {
+                        const currentSlideEl = slick.$slides.get(currentSlide);
+                        const video = $(currentSlideEl).find('video').get(0);
+
+                        if (video) {
+                            slick.slickPause();
+                            video.currentTime = 0;
+
+                            const playPromise = video.play();
+                            if (playPromise !== undefined) {
+                                playPromise.then(() => {
+                                    video.onended = () => {
+                                        slick.slickPlay();
+                                    };
+                                }).catch(error => {
+                                    console.log("Autoplay error:", error);
+                                    slick.slickPlay();
+                                });
+                            }
+                        } else {
+                            slick.slickPlay();
+                        }
+                    });
+
+                    // Mute video on scroll past 10%, unmute below
+                    $(window).on('scroll', function () {
+                        const scrollTop = $(window).scrollTop();
+                        const docHeight = $(document).height() - $(window).height();
+                        const scrollPercent = (scrollTop / docHeight) * 100;
+
+                        // Get the current slick slide
+                        const slickInstance = $carousel.slick('getSlick');
+                        const currentSlide = slickInstance.currentSlide;
+                        const currentSlideEl = slickInstance.$slides.get(currentSlide);
+                        const video = $(currentSlideEl).find('video').get(0);
+
+                        if (video) {
+                            if (scrollPercent > 9) {
+                                video.muted = true;
+                            } else {
+                                video.muted = false;
+                            }
+                        }
+                    });
+                });
+            </script>
+
+            <script>
+                // Mute/Unmute toggle
+                // $carousel.on('click', '.mute-toggle', function (e) {
+                //     e.stopPropagation(); // prevent interfering with slick
+                //     const $btn = $(this);
+                //     const $video = $btn.siblings('video').get(0);
+
+                //     if ($video) {
+                //         $video.muted = !$video.muted;
+                //         $btn.text($video.muted ? '🔇' : '🔊');
+                //     }
+                // });
+
+            </script>
+
+            <!-- about  -->
+            <!-- <section class="about py-lg-5 py-md-5">
+                <div class="container">
+                    <div class="row py-5">
+                        <div class="col-lg-8 col-md-6 col-12 ">
+                            <div class="about-sub">
+                                <div oncontextmenu="return false;" class="about-img d-flex ">
+                                   <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-12 align-items-center">
+                            <div class="about-content ms-lg-5 ms-md-0 ms-0 mt-3">
+                                <h2 data-aos="fade-up">Nice to Meet You</h2>
+                                <p>Photography was always my passion and my dream job. It’s even difficult for me to
+                                    call it a
+                                    job, as I consider my profession as a hobby of my life. Meeting new people, catching
+                                    their
+                                    mood, being part of the happiest momentы of their life — isn’t it a dream?</p>
+                                <div class="d-flex align-items-center">
+                                    <a class="d-flex align-items-center" href="">About me
+                                        <i class=" align-items-center ms-2 fa-sharp-duotone fa-thin fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- about -->
+
+            <!-- blogs  -->
+            <!-- <section class="py-3">
+                <div class="blogs py-5">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-12 col-12 ps-5 pe-lg-0 pe-md-5 pe-5 blogs-img">
+                                <img class="img-fluid " src="./imgaes/wedding-3.jpg" alt="">
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-12  ms-5">
+                                <div class="blog-content ms-md-0 ms-0 mt-3">
+                                    <h2 data-aos="fade-up ">Nice to meet you</h2>
+                                    <p class="pe-5 mt-4">Photography was always my passion and my dream job. It’s even
+                                        difficult for me to
+                                        call it a
+                                        job, as I consider my profession as a hobby of my life. Meeting new people,
+                                        catching
+                                        their
+                                        mood, being part of the happiest momentы of their life — isn’t it a dream?</p>
+                                    <div class="d-flex align-items-center">
+                                        <a class="d-flex align-items-center" href="">About me
+                                            <i
+                                                class=" align-items-center ms-2 fa-sharp-duotone fa-thin fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1 "></div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- blogs  -->
+
+            <!-- ivory about us -->
+            <section class="ivory-about">
+                <div class="container py-3">
+                    <div class="row">
+                        <h1 class="text-center py-4">We find Magic in Mundane, <br>Stories in every frame</h1>
+                        <div class="col-lg-4 col-md-6 col-6 order-1 order-lg-1  mt-lg-5 mt-md-5 mt-3">
+                            <img class="img-fluid" src="https://ik.imagekit.io/dqel2bwws/imgaes/sparsh-vama-black&white.jpg?updatedAt=1753171761731" alt="">
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-12 ivory-para order-3 order-lg-2 p-4 mt-4 ">
+                            <p>Welcome to ARIHANT STUDIO — where moments become memories.
+                            </p>
+
+                            <p>We’re a team of passionate photographers and visual storytellers dedicated to capturing
+                                life’s most meaningful moments. Whether it’s a wedding, a family portrait, a milestone
+                                celebration, or a brand that needs its story told, we believe every moment deserves to
+                                be preserved beautifully.
+
+
+                            </p>
+                            <p>At ARIHANT STUDIO, we combine a keen eye for detail with a love for authentic emotion.
+                                Our approach is personal, professional, and creative — making sure every image reflects
+                                not just what it looked like, but what it felt like.
+
+
+                            </p>
+                            <p>With <b>25 years of experience</b> and a deep appreciation for natural light, genuine
+                                connections, and thoughtful composition, our goal is simple: to create timeless images
+                                that you’ll treasure for years to come.
+                            </p>
+                        </div>
+                        <div class="col-lg-4 col-md-6 order-2 order-lg-3 col-6">
+                            <img class="img-fluid" src="https://ik.imagekit.io/dqel2bwws/imgaes/aangi-sinlge-1.jpg?updatedAt=1753171686086" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ivory about us -->
+
+            <!-- grid -->
+            <div class="discover-grid pb-5">
+                <div class="container">
+                    <div class="discover-heading py-5">
+                        <h1 class="text-center mb-3">Frames We Create
+
+                        </h1>
+                        <div class="grid-container  ">
+
+                            <div class="column mt-3">
+                                <div data-aos="fade-up" class="img-2 wedding">
+                                    <a href="portfolio.html?section=wedding"> <img class=""
+                                            src="https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi-new.jpg?updatedAt=1753171682921"></a>
+                                    <a href="portfolio.html?section=wedding">
+                                        <!-- <p class="text-center fs-1 mt-3">Wedding</p> -->
+                                    </a>
+                                </div>
+                                <!-- <p class="text-center fs-1 mt-3">Wedding</p> -->
+
+                                <div class="img-2 mt-3" data-aos="fade-right">
+                                    <a href="portfolio.html?section=contact">
+                                        <img class="" src="https://ik.imagekit.io/dqel2bwws/imgaes/maternity-new.jpg?updatedAt=1753171740180"></a>
+                                    <a href="portfolio.html?section=contact">
+                                    </a>
+                                </div>
+
+                                <!-- <p class="text-center fs-1 mt-3">Pre Wedding</p> -->
+
+                                <div class="img-2 mt-3" data-aos="fade-up">
+                                    <a href="portfolio.html?section=post-wedding"> <img
+                                            src="https://ik.imagekit.io/dqel2bwws/imgaes/post-wedding-new-1.jpg?updatedAt=1753171750269"></a>
+                                    <a href="portfolio.html?section=post-wedding">
+                                    </a>
+                                </div>
+                                <!-- <p class="text-center fs-1 mt-3">Post Wedding</p> -->
+
+                            </div>
+
+
+                            <div class="column mt-3" data-aos="fade-right">
+                                <div class="img-2 ">
+                                    <a href="portfolio.html?section=profile"> <img
+                                            src="https://ik.imagekit.io/dqel2bwws/imgaes/parth-nikki-pre-wedding.jpg?updatedAt=1753171742927"></a>
+                                    <a href="portfolio.html?section=profile">
+                                    </a>
+                                </div>
+                                <!-- <p class="text-center fs-1 mt-3">Pre Wedding</p> -->
+
+
+                                <div class="img-2 mt-3" data-aos="fade-left">
+                                    <a href="portfolio.html?section=travel"><img src="https://ik.imagekit.io/dqel2bwws/imgaes/couple-mew.jpg?updatedAt=1753171704689"></a>
+                                    <a href="portfolio.html?section=travel">
+                                    </a>
+                                </div>
+                                <!-- <p class="text-center fs-1 mt-3">Couple</p> -->
+
+                                <div class="img-2 mt-3 " data-aos="fade-up">
+                                    <a href="portfolio.html?section=pre-wedding"> <img
+                                            src="https://ik.imagekit.io/dqel2bwws/imgaes/toddler-new.jpg?updatedAt=1753171768583"></a>
+                                    <a href="portfolio.html?section=pre-wedding">
+                                        <!-- <p class="text-center fs-1 mt-3">Pre Wedding</p> -->
+                                    </a>
+                                </div>
+
+                                <!-- <p class="text-center fs-1 mt-3">Maternity</p> -->
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="view-portfolio text-center py-5">
+                        <a href="portfolio.html" class="text-center">View Portfolio</a>
+                    </div>
+                </div>
+            </div>
+            <!-- grid -->
+
+            <!-- grid script -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.querySelector(".wedding-link").addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent instant navigation
+
+                        // Select elements to animate
+                        let elements = document.querySelectorAll("img, .some-class, .another-class");
+
+                        // Preload images of the next page
+                        let nextPageImages = ["./images/wedding-1.jpg", "./images/wedding-2.jpg"];
+                        let loadedImages = 0;
+
+                        nextPageImages.forEach(src => {
+                            let img = new Image();
+                            img.src = src;
+                            img.onload = function () {
+                                loadedImages++;
+                                if (loadedImages === nextPageImages.length) {
+                                    // Once all images are preloaded, animate and redirect
+                                    gsap.to(elements, {
+                                        opacity: 0,
+                                        y: -50,
+                                        duration: 0.6,
+                                        stagger: 0.1,
+                                        onComplete: function () {
+                                            window.location.href = "portfolio.html#wedding";
+                                        }
+                                    });
+                                }
+                            };
+                        });
+                    });
+                });
+            </script>
+            <!-- grid script -->
+
+            <!-- testimonials  -->
+            <!-- <section class="testimonials py-5 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 col-12 text-lg-start text-md-center text-center">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+                                    <img oncontextmenu="return false;" id="testimonial-img"
+                                        src="./imgaes/Testimonail-1-1.jpg" alt="Client Testimonial 1"
+                                        class="img-fluid transition">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-7 col-md-6 col-12 d-flex align-items-center justify-content-center">
+                            <div class="testi-content text-center">
+                                <h2 class="fs-1">Echoes of Excellence</h2>
+                                <p id="testimonial-text" class="transition">The work done by Arihant Studio on my
+                                    wedding is
+                                    exceptional. All the people are very friendly and it seemed like they were more
+                                    interested
+                                    than us to get good photos 😄 The main thing I liked about you all is speed - we
+                                    would get
+                                    high quality reels and photos same day/ next day of the event which is truly
+                                    appreciated ✨🙌
+                                </p>
+                                <span class="d-block transition" id="testimonial-name">Divy & Karina</span>
+                                <ul class="nav nav-pills mb-3 text-center d-flex justify-content-center" id="pills-tab"
+                                    role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link mt-3" id="prev-testimonial" type="button">
+                                            <i class="fa-sharp-duotone fa-thin fa-arrow-left"></i>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link mt-3" id="next-testimonial" type="button">
+                                            <i class="fa-sharp-duotone fa-thin fa-arrow-right"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- testimonials -->
+
+            <!-- testimonials  -->
+            <!-- <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const testimonials = [
+                        {
+                            img: "./imgaes/Testimonail-1-1.jpg",
+                            text: "“The work done by Arihant Studio on my wedding is exceptional. All the people are very friendly and it seemed like they were more interested than us to get good photos 😄 The main thing I liked about you all is speed - we would get high quality reels and photos same day/ next day of the event which is truly appreciated ✨🙌”",
+                            name: "Divy & Karina"
+                        },
+                        {
+                            img: "./imgaes/sparsh-vama-testimonials.jpeg",
+                            text: "“Hyy Tirth Just wanted to thank you for the efforts u had taken!Really loved the outcomeIt was our first time and u made us feel so comfortable in front of the camera Had a great time filming itAnd everyone has appreciated your work as well they all loved it Thank you so much once again💓”",
+                            name: "Sparsh & Vama"
+                        },
+                        {
+                            img: "./imgaes/Dhruv-Testimonails-1.jpg",
+                            text: "“A huge thank you to Tirth Bhai and the entire team for capturing the Dhaja moments so beautifully!Your dedication, creativity, and attention to detail made every shot truly special.The outcome is beyond amazing. Grateful for your hard work and talent! 📸✨”",
+                            name: "Dhruv Puj"
+                        },
+                        // {
+                        //     img: "./imgaes/Dhruv-testimonials-1.jpg",
+                        //     text: "“A huge thank you to Tirth Bhai and the entire team for capturing the Dhaja moments so beautifully!Your dedication, creativity, and attention to detail made every shot truly special.The outcome is beyond amazing. Grateful for your hard work and talent! 📸✨”",
+                        //     name: "Sophia & Liam"
+                        // },
+                        // {
+                        //     img: "https://firstsight.design/palette/multi/wp-content/uploads/2020/12/Portfolio_2222@4x.jpg",
+                        //     text: "“Kaya Mason is just an awesome photographer and great person. Even if it’s your first photo session, don’t worry, Kaya will calm you down, give a lot of helpful tips and suggestions. She is so calm and attentive! My entire family was impressed by her and the photographs she took.”",
+                        //     name: "Sophia & Liam"
+                        // },
+                    ];
+
+                    let currentIndex = 0;
+                    const imgElement = document.getElementById("testimonial-img");
+                    const textElement = document.getElementById("testimonial-text");
+                    const nameElement = document.getElementById("testimonial-name");
+
+                    function updateTestimonial(index) {
+                        // Fade out
+                        imgElement.classList.add("fade-out");
+                        textElement.classList.add("fade-out");
+                        nameElement.classList.add("fade-out");
+
+                        setTimeout(() => {
+                            imgElement.src = testimonials[index].img;
+                            textElement.innerHTML = testimonials[index].text;
+                            nameElement.innerHTML = testimonials[index].name;
+
+                            // Fade in
+                            imgElement.classList.remove("fade-out");
+                            textElement.classList.remove("fade-out");
+                            nameElement.classList.remove("fade-out");
+                        }, 500); // Matches the CSS transition duration
+                    }
+
+                    document.getElementById("prev-testimonial").addEventListener("click", function () {
+                        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                        updateTestimonial(currentIndex);
+                    });
+
+                    document.getElementById("next-testimonial").addEventListener("click", function () {
+                        currentIndex = (currentIndex + 1) % testimonials.length;
+                        updateTestimonial(currentIndex);
+                    });
+                });
+            </script> -->
+            <!-- testimonials -->
+
+            <!-- <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const testiContainer = document.querySelector(".testi-content");
+                    const textElement = document.getElementById("testimonial-text");
+
+                    function adjustHeight() {
+                        let maxHeight = 0;
+                        document.querySelectorAll("#testimonial-text").forEach(text => {
+                            if (text.scrollHeight > maxHeight) {
+                                maxHeight = text.scrollHeight;
+                            }
+                        });
+                        testiContainer.style.minHeight = maxHeight + "px";
+                    }
+
+                    adjustHeight();
+                    window.addEventListener("resize", adjustHeight);
+                });
+
+            </script> -->
+
+
+            <!-- sparsh and vama -->
+            <section class="sparsh-vama">
+                <div class="video-wrapper">
+                    <video id="sparsh-vama-video" autoplay muted loop class="img-fluid">
+                        <source src="./videos/Save the date - Sparsh & Vama.mp4" type="video/mp4">
+                    </video>
+                    <div id="videoOverlay" class="video-overlay"></div>
+                </div>
+                <div id="muteToggle" class="mute-icon">
+                    <i class="fa-regular fa-play"></i> <!-- Only Unmute Icon -->
+                </div>
+            </section>
+            <!-- sparsh and vama -->
+
+            <script>
+                const video = document.getElementById("sparsh-vama-video");
+                const muteToggle = document.getElementById("muteToggle");
+                const videoOverlay = document.getElementById("videoOverlay");
+
+                // Function to check if the device is a phone (screen width < 768px)
+                function isPhone() {
+                    return window.innerWidth < 768;
+                }
+
+                // Function to check if fullscreen is active
+                function isFullscreen() {
+                    return document.fullscreenElement || document.webkitFullscreenElement;
+                }
+
+                // Function to update UI elements based on mute state
+                function updateUI() {
+                    if (video.muted) {
+                        muteToggle.style.opacity = "1"; // Show unmute icon
+                        muteToggle.style.pointerEvents = "auto"; // Enable clicking
+                        videoOverlay.style.opacity = "1"; // Show overlay
+                    } else {
+                        muteToggle.style.opacity = "0"; // Hide unmute icon
+                        muteToggle.style.pointerEvents = "none"; // Disable clicking
+                        videoOverlay.style.opacity = "0"; // Hide overlay
+                    }
+                }
+
+                // Function to enter fullscreen mode (only for mobile)
+                function enterFullscreen() {
+                    if (!isFullscreen()) {
+                        if (video.requestFullscreen) {
+                            video.requestFullscreen();
+                        } else if (video.webkitRequestFullscreen) {
+                            video.webkitRequestFullscreen();
+                        } else if (video.msRequestFullscreen) {
+                            video.msRequestFullscreen();
+                        }
+                    }
+                }
+
+                // Function to handle video and play icon click
+                function handleVideoClick() {
+                    if (isPhone()) {
+                        if (!isFullscreen()) {
+                            // First click → Unmute + Remove overlay
+                            video.muted = false;
+                            updateUI();
+
+                            // Enter fullscreen without needing to play the video again
+                            enterFullscreen();
+                        } else {
+                            // Already in fullscreen → Toggle mute/unmute
+                            video.muted = !video.muted;
+                            updateUI();
+                        }
+                    } else {
+                        // On PC, just toggle mute & remove overlay
+                        video.muted = !video.muted;
+                        updateUI();
+                    }
+                }
+
+                // Attach event listeners to video and play icon (mute button)
+                video.addEventListener("click", handleVideoClick);
+                muteToggle.addEventListener("click", (event) => {
+                    event.stopPropagation(); // Prevents video click event from firing
+                    handleVideoClick(); // Handle play icon click the same way as video click
+                });
+
+                // Listen for fullscreen change and mute the video when exiting
+                document.addEventListener("fullscreenchange", () => {
+                    if (!isFullscreen()) {
+                        video.muted = true;
+                        updateUI();
+                    }
+                });
+                document.addEventListener("webkitfullscreenchange", () => {
+                    if (!isFullscreen()) {
+                        video.muted = true;
+                        updateUI();
+                    }
+                });
+
+                // Ensure UI is correct on page load
+                updateUI();
+
+
+            </script>
+
+            <!-- bg -->
+            <!-- <section>
+                <div oncontextmenu="return false;" class="shooting">
+                    <div class="shooting-content text-center">
+                        <a href="#" id="playButton">PLAY</a>
+                    </div>
+                    <video id="videoPlayer" style="display: none;" controls>
+                        <source src="./videos/Save the date - Sparsh & Vama.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <button class="mt-3" id="closeButton" style="display: none;"><i
+                            class="fa-thin fa-xmark"></i></button>
+                </div>
+            </section> -->
+
+            <!-- bg script-->
+            <!-- <script>
+                document.getElementById('playButton').addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent the default action (i.e., navigation)
+                    var video = document.getElementById('videoPlayer');
+                    var closeButton = document.getElementById('closeButton');
+
+                    video.style.display = 'block';  // Show the video
+                    closeButton.style.display = 'block';  // Show the close button
+
+                    // Add transition effect for opacity
+                    setTimeout(function () {
+                        video.style.opacity = 1;  // Make the video visible with fade-in effect
+                        closeButton.style.opacity = 1;  // Make the close button visible with fade-in effect
+                    }, 10);
+
+                    video.play();  // Play the video
+                });
+
+                // Close the video when the close button is clicked
+                document.getElementById('closeButton').addEventListener('click', function () {
+                    var video = document.getElementById('videoPlayer');
+                    var closeButton = document.getElementById('closeButton');
+
+                    video.pause();  // Stop the video
+                    video.currentTime = 0;  // Reset the video to the start
+
+                    // Fade out effect
+                    video.style.opacity = 0;  // Fade the video out
+                    closeButton.style.opacity = 0;  // Fade the close button out
+
+                    // After fade out, hide the elements completely
+                    setTimeout(function () {
+                        video.style.display = 'none';  // Hide the video
+                        closeButton.style.display = 'none';  // Hide the close button
+                    }, 500);  // Delay to match the fade-out duration
+                });
+
+                // Hide video when the Escape key is pressed
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === 'Escape') { // Check if the pressed key is the Escape key
+                        var video = document.getElementById('videoPlayer');
+                        var closeButton = document.getElementById('closeButton');
+
+                        video.pause();  // Stop the video
+                        video.currentTime = 0;  // Reset the video to the start
+
+                        // Fade out effect
+                        video.style.opacity = 0;  // Fade the video out
+                        closeButton.style.opacity = 0;  // Fade the close button out
+
+                        // After fade out, hide the elements completely
+                        setTimeout(function () {
+                            video.style.display = 'none';  // Hide the video
+                            closeButton.style.display = 'none';  // Hide the close button
+                        }, 500);  // Delay to match the fade-out duration
+                    }
+                });
+
+                // Hide video when it finishes playing
+                document.getElementById('videoPlayer').addEventListener('ended', function () {
+                    var video = document.getElementById('videoPlayer');
+                    var closeButton = document.getElementById('closeButton');
+
+                    // Fade out effect
+                    video.style.opacity = 0;  // Fade the video out
+                    closeButton.style.opacity = 0;  // Fade the close button out
+
+                    // After fade out, hide the elements completely
+                    setTimeout(function () {
+                        video.style.display = 'none';  // Hide the video
+                        closeButton.style.display = 'none';  // Hide the close button
+                    }, 500);  // Delay to match the fade-out duration
+                });
+
+
+
+
+            </script> -->
+            <!-- bg script-->
+
+            <!-- Reels -->
+            <!-- <section class="container py-4">
+                <div class="reels-heading text-center py-4">
+                    <h1>Reels</h1>
+                </div>
+                <div class="owl-carousel video-section">
+                    <div class="item">
+                        <div>
+                            <video class="js-player" crossorigin playsinline>
+                                <source src="./videos/Save the date-reel.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div>
+                            <video class="js-player" crossorigin playsinline>
+                                <source src="./videos/jignesh-isha.MP4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div>
+                            <video class="js-player" crossorigin playsinline>
+                                <source src="./videos/Saiyam & Anisha - Mudberry (1).mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <video class="js-player" crossorigin playsinline>
+                                <source src="./videos/Reel-6.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <video class="js-player" crossorigin playsinline>
+                                <source src="./videos/Dev & Vedika - Save the date 4F (1).mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                </div>
+            </section> -->
+            <!-- Reels -->
+
+            <script src="./js/jquery.min.js"></script>
+            <script src="./js/owl.carousel.js"></script>
+            <script src="./js/plyr.js"></script>
+
+            <!-- reels script -->
+            <script>
+
+                var owl = $('.owl-carousel');
+                owl.owlCarousel({
+                    stagePadding: 180,
+                    items: 3,
+                    loop: true,
+                    nav: true, // ← this shows arrows
+                    navText: [
+                        '<i class="fa fa-chevron-left"></i>',
+                        '<i class="fa fa-chevron-right"></i>'
+                    ],
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            loop: true,
+                            stagePadding: 40
+                        },
+                        768: {
+                            margin: 10,
+                            items: 2,
+                            loop: true,
+                            margin: 20,
+                            stagePadding: 120
+                        },
+                        1440: {
+                            items: 3,
+                            loop: true,
+                            // margin:-10,
+                            stagePadding: 150
+                        }
+
+                    }
+                });
+                $('.play').on('click', function () {
+                    owl.trigger('play.owl.autoplay', [1000])
+                })
+                $('.stop').on('click', function () {
+                    owl.trigger('stop.owl.autoplay')
+                });
+
+
+                var playerSettings = {
+                    controls: ["play-large"],
+                    fullscreen: { enabled: false },
+                    resetOnEnd: true,
+                    hideControls: true,
+                    clickToPlay: true,
+                    keyboard: false
+                };
+
+                const players = Plyr.setup(".js-player", playerSettings);
+
+                players.forEach(function (instance, index) {
+                    instance.on("play", function () {
+                        players.forEach(function (instance1, index1) {
+                            if (instance != instance1) {
+                                instance1.pause();
+                            }
+                        });
+                    });
+                });
+
+
+                $(".video-section").on("translated.owl.carousel", function (event) {
+                    players.forEach(function (instance, index1) {
+                        instance.pause();
+                    });
+                });
+
+                owl.owlCarousel({
+                    stagePadding: 180,
+                    items: 3,
+                    loop: true,
+                    nav: true,
+                    navText: [
+                        '<i class="fa fa-chevron-left"></i>',
+                        '<i class="fa fa-chevron-right"></i>'
+                    ],
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    autoplayHoverPause: true,
+                    smartSpeed: 800, // ← smoother scroll (adjust as needed)
+                    responsive: {
+                        0: {
+                            items: 1,
+                            loop: true,
+                            stagePadding: 40
+                        },
+                        768: {
+                            margin: 10,
+                            items: 2,
+                            loop: true,
+                            margin: 20,
+                            stagePadding: 120
+                        },
+                        1440: {
+                            items: 3,
+                            loop: true,
+                            stagePadding: 150
+                        }
+                    }
+                });
+                owl.owlCarousel({
+                    // ...existing settings
+                    smartSpeed: 800,
+                    autoplaySpeed: 1000,
+                    navSpeed: 1000,
+                    dotsSpeed: 1000,
+                    dragEndSpeed: 800
+                });
+
+            </script>
+            <!-- reels script -->
+
+
+            <!--you tube  -->
+            <section class="youtube py-5">
+                <h1 class="text-center mb-5  mt-3">Forever in Frame</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div style="position:relative;aspect-ratio:16/9;">
+                                <div style="position:relative;aspect-ratio:16/9;">
+                                    <div style="position:relative;aspect-ratio:16/9;">
+                                        <iframe loading="lazy" title="Gumlet video player"
+                                            src="https://play.gumlet.io/embed/67d5632fcbc68914a346543c?t1=1744010180&t2=1744010181711?preload=false&autoplay=false&loop=false&background=false&disable_player_controls=false"
+                                            style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="https://player.vimeo.com/api/player.js"></script>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 mt-lg-0 mt-md-0 mt-4">
+                            <div style="position:relative;aspect-ratio:16/9;">
+                                <div style="position:relative;aspect-ratio:16/9;">
+                                    <div style="position:relative;aspect-ratio:16/9;">
+                                        <iframe loading="lazy" title="Gumlet video player"
+                                            src="https://play.gumlet.io/embed/67f37c647ee0a66d6b47bc46?t1=1744035228&t2=1744011107870?preload=false&autoplay=false&loop=false&background=false&disable_player_controls=false"
+                                            style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 mt-4">
+                            <div style="position:relative;aspect-ratio:16/9;">
+                                <div style="position:relative;aspect-ratio:16/9;">
+                                    <div style="position:relative;aspect-ratio:16/9;">
+                                        <iframe loading="lazy" title="Gumlet video player"
+                                            src="https://play.gumlet.io/embed/67d9c5aaf5c570a31e6b8932?t1=1744015287&t2=1744015315235?preload=false&autoplay=false&loop=false&background=false&disable_player_controls=false"
+                                            style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="https://player.vimeo.com/api/player.js"></script>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 mt-4">
+                            <div style="position:relative;aspect-ratio:16/9;">
+                                <div style="position:relative;aspect-ratio:16/9;">
+                                    <iframe loading="lazy" title="Gumlet video player"
+                                        src="https://play.gumlet.io/embed/67d9c5aade27d6cecd79e8a3?t1=1744015796&t2=1744015789481?preload=false&autoplay=false&loop=false&background=false&disable_player_controls=false"
+                                        style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                                        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                                    </iframe>
+                                </div>
+                            </div>
+                            <script src="https://player.vimeo.com/api/player.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--you tube  -->
+
+            <!-- testimonials new -->
+            <section class="testimonials py-5 ">
+                <div class="">
+                    <div class="row g-0">
+                        <div
+                            class="testimonial-img  order-lg-1 col-lg-6  col-12 text-lg-start text-md-center text-center">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane testi-img fade show active" id="pills-home" role="tabpanel">
+                                    <img oncontextmenu="return false;" id="testimonial-img"
+                                        src="https://ik.imagekit.io/dqel2bwws/imgaes/Divy&karina_testimoinals-2.jpg?updatedAt=1753171717459" alt="Client Testimonial 1"
+                                        class="transition testimonial-img">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6  order-lg-0  testi-bg col-12 d-flex ">
+                            <div
+                                class="testi-content text-center d-flex justify-content-between  align-items-center flex-column">
+                                <!-- <h2 class="fs-1">Echoes of Excellence</h2> -->
+                                <h1 class="mt-lg-0 mt-md-4 mt-4">TESTIMONIALS</h1>
+                                <span class="d-block transition  mt-lg-0 mt-md-4 mt-4" id="testimonial-name">Divy &
+                                    Karina</span>
+                                <p id="testimonial-text" class="transition mt-lg-0 mt-md-4 mt-4">“The work done by
+                                    Arihant Studio on my wedding is exceptional. All the people are very friendly and it
+                                    seemed like they were more interested than us to get good photos 😄 The main thing I
+                                    liked about you all is speed - we would get high quality reels and photos same day/
+                                    next day of the event which is truly appreciated ✨🙌”
+                                </p>
+                                <ul class="nav nav-pills mb-3 text-center d-flex justify-content-center" id="pills-tab"
+                                    role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link mt-3" id="prev-testimonial" type="button">
+                                            <i class="fa-sharp-duotone fa-thin fa-arrow-left"></i>
+                                            <!-- <i class="fa-solid fa-arrow-right"></i> -->
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link mt-3" id="next-testimonial" type="button">
+                                            <i class="fa-sharp-duotone fa-thin fa-arrow-right"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- testimonials new-->
+
+            <!-- testimonials new-->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const testimonials = [
+                        {
+                            img: "https://ik.imagekit.io/dqel2bwws/imgaes/Divy&karina_testimoinals-2.jpg?updatedAt=1753171717459",
+                            text: "“The work done by Arihant Studio on my wedding is exceptional. All the people are very friendly and it seemed like they were more interested than us to get good photos 😄 The main thing I liked about you all is speed - we would get high quality reels and photos same day/ next day of the event which is truly appreciated ✨🙌”",
+                            name: "Divy & Karina"
+                        },
+
+                        {
+                            img: "https://ik.imagekit.io/dqel2bwws/imgaes/sparsh%20and%20vama%20testimonial.jpeg?updatedAt=1753171761554",
+                            text: "“Hyy Tirth Just wanted to thank you for the efforts u had taken!Really loved the outcomeIt was our first time and u made us feel so comfortable in front of the camera Had a great time filming itAnd everyone has appreciated your work as well they all loved it Thank you so much once again💓”",
+                            name: "Sparsh & Vama"
+                        },
+                        {
+                            img: "https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi-testimonials-2.jpg?updatedAt=1753171685293",
+                            text: "“Thank you so much for making our day so special! 🤍 We loved everything, and the attention to detail was simply amazing. 🔵 We’re beyond happy with your work, and I’m at a loss for words—it was surreal to witness everything. ❤️ Once again, thank you so much! 🥹”",
+                            name: "Aagam & Aangi"
+                        },
+
+                        // {
+                        //     img: "./imgaes/Dhruv-testimonials-1.jpg",
+                        //     text: "“A huge thank you to Tirth Bhai and the entire team for capturing the Dhaja moments so beautifully!Your dedication, creativity, and attention to detail made every shot truly special.The outcome is beyond amazing. Grateful for your hard work and talent! 📸✨”",
+                        //     name: "Sophia & Liam"
+                        // },
+                        // {
+                        //     img: "https://firstsight.design/palette/multi/wp-content/uploads/2020/12/Portfolio_2222@4x.jpg",
+                        //     text: "“Kaya Mason is just an awesome photographer and great person. Even if it’s your first photo session, don’t worry, Kaya will calm you down, give a lot of helpful tips and suggestions. She is so calm and attentive! My entire family was impressed by her and the photographs she took.”",
+                        //     name: "Sophia & Liam"
+                        // },
+                    ];
+
+                    let currentIndex = 0;
+                    const imgElement = document.getElementById("testimonial-img");
+                    const textElement = document.getElementById("testimonial-text");
+                    const nameElement = document.getElementById("testimonial-name");
+
+                    function updateTestimonial(index) {
+                        // Fade out
+                        imgElement.classList.add("fade-out");
+                        textElement.classList.add("fade-out");
+                        nameElement.classList.add("fade-out");
+
+                        setTimeout(() => {
+                            imgElement.src = testimonials[index].img;
+                            textElement.innerHTML = testimonials[index].text;
+                            nameElement.innerHTML = testimonials[index].name;
+
+                            // Fade in
+                            imgElement.classList.remove("fade-out");
+                            textElement.classList.remove("fade-out");
+                            nameElement.classList.remove("fade-out");
+                        }, 500); // Matches the CSS transition duration
+                    }
+
+                    document.getElementById("prev-testimonial").addEventListener("click", function () {
+                        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                        updateTestimonial(currentIndex);
+                    });
+
+                    document.getElementById("next-testimonial").addEventListener("click", function () {
+                        currentIndex = (currentIndex + 1) % testimonials.length;
+                        updateTestimonial(currentIndex);
+                    });
+                });
+            </script>
+            <!-- testimonials new-->
+
+            <!-- instagram -->
+            <section oncontextmenu="return false;" class="instagram py-5 pt-5  text-center">
+                <h2 class="">Instagram</h2>
+                <div class="row">
+                    <div class="insta-img py-5 ">
+                        <div class="row d-flex g-0">
+                            <img data-aos="fade-up"
+                                onclick="window.location.href='https:www.instagram.com/reels/DFbnjnOzwwm/'"
+                                src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-2.jpg?updatedAt=1753171730696" alt="" class="img-fluid">
+                            <img data-aos="fade-up" src="https://ik.imagekit.io/dqel2bwws/imgaes/jigar-sangeeta-insta.jpg?updatedAt=1753171735373" alt="" class="img-fluid">
+                            <img data-aos="fade-up" src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-10.jpg?updatedAt=1753171727859" alt="" class="img-fluid">
+                            <img data-aos="fade-up" src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-12.jpg?updatedAt=1753171728206" alt="" class="img-fluid">
+                            <img data-aos="fade-up" src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-13.jpg?updatedAt=1753171728250" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <a class="text-center follow-me mt-lg-5 mt-md-5 mt-2" target="_blank"
+                    href="https://www.instagram.com/arihantstudiosurat/">follow us @arihantstudio</a>
+            </section>
+            <!-- instagram -->
+
+            <!-- footer -->
+            <section class="footer">
+                <div class="container ">
+                    <div class="row p-lg-5 p-md-5 p-2">
+                        <div class="col-lg-4 col-md-4 col-12 d-flex justify-content-center">
+                            <div class="footer-content mt-lg-0 mt-md-5 mt-5 text-center">
+                                <p class="">Telephone</p>
+                                <a type="tel" id="number" class=" d-inline-block" href="tel:9081466622">+91
+                                    9824866622</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 d-flex justify-content-center">
+                            <div class="footer-content mt-lg-0 mt-md-5 mt-5">
+                                <p class="text-center">Social</p>
+                                <ul class="d-flex mb-0 p-0 gap-3 text-center footer-social-links">
+                                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 d-flex justify-content-center">
+                            <div class="footer-content mt-lg-0 mt-md-5 mt-5">
+                                <p class="text-center">Email</p>
+                                <a href="mailto:arihantstudiopal@gmail.com">arihantstudiopal@gmail.com</a>
+                            </div>
+
+                        </div>
+
+                        <div class="container d-flex justify-content-center py-5">
+                            <div class="row py-5">
+
+                                <div class="list d-flex">
+                                    <ul class="d-md-flex col-lg-6 col-md-6 col-6  ">
+                                        <li><a class="text-dark" href="">portfolio</a></li>
+                                        <li><a class="text-dark" href="">about</a></li>
+
+                                    </ul>
+                                    <ul class="d-md-flex col-lg-6 col-md-6 col-6">
+                                        <li class="padding-left"><a class="text-dark" href="">Gallery</a></li>
+                                        <li><a class="text-dark" href="">Contact</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="copyright text-center p-3">
+                            <span>© 2025, Arihant Studio. All rights reserved.</span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+            <!-- footer -->
+        </div>
+
+        <!-- slick carousel js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+            integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- slick carousel js -->
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- slick carousel js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+            integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- slick carousel js -->
+
+        <!-- aos js -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!-- aos js -->
+
+        <script>
+            $(document).ready(function () {
+                $(".owl-carousel").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    dots: false,
+                    lazyLoad: true,
+                    responsiveClass: true
+                });
+            });
+
+            $('.mynav-next').click(function () {
+                $(".owl-carousel").trigger('next.owl.carousel');
+            })
+            // Go to the previous item
+            $('.mynav-prev').click(function () {
+                $(".owl-carousel").trigger('prev.owl.carousel');
+            });
+        </script>
+
+        <!-- aos script -->
+        <script>
+            AOS.init();
+        </script>
+        <!-- aos script -->
+
+        <!-- about us img script -->
+        <script>
+            window.addEventListener("scroll", function () {
+                let scrollY = window.scrollY;
+                let img = document.querySelector(".about .about-img img:last-child");
+
+                if (img) {
+                    img.style.transform = `translateY(${scrollY * 0.1}px)`; // Adjust speed
+                }
+            });
+        </script>
+        <!-- about us img script -->
+
+        <!-- navbar script -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                window.addEventListener("scroll", function () {
+                    let navbar = document.querySelector(".navbar-main");
+                    if (window.scrollY > 50) {
+                        navbar.classList.add("navbar-scroll");
+                    } else {
+                        navbar.classList.remove("navbar-scroll");
+
+                    }
+                    if (window.scrollY > 650) {
+                        navbar.classList.add("navbar-scroll-1");
+
+                    } else {
+                        navbar.classList.remove("navbar-scroll-1");
+
+                    }
+                    if (window.scrollY > 1330) {
+                        navbar.classList.add("navbar-scroll-2");
+
+                    } else {
+                        navbar.classList.remove("navbar-scroll-2");
+
+                    }
+                    if (window.scrollY > 4030) {
+                        navbar.classList.add("navbar-scroll-3");
+
+                    } else {
+                        navbar.classList.remove("navbar-scroll-3");
+
+                    }
+
+
+                });
+            });
+        </script>
+        <!-- navbar script -->
+
+        <!-- back to top -->
+        <script>// back to top button
+            var btn = $('#button');
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
+                    btn.addClass('show');
+                } else {
+                    btn.removeClass('show');
+                }
+            });
+            btn.on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, '300');
+            });
+            // back to top button
+
+
+        </script>
+        <!-- back to top -->
+
+        <script src="script.js"></script>
+    </div>
+    </div>
+
+    <script>
+        gsap.registerPlugin(ScrollSmoother);
+
+        ScrollSmoother.create({
+            wrapper: "#smooth-wrapper",
+            content: "#smooth-content",
+            smooth: 2, // Adjust speed (higher = slower)
+            effects: true
+        });
+
+    </script>
+
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</body>
+
+</html>
