@@ -1446,15 +1446,14 @@
         </script>
         <!-- back to top -->
 
-        <script src="script.js"></script>
     </div>
-    </div>
+</div>
 
-    <script>
-        gsap.registerPlugin(ScrollSmoother);
-
-        ScrollSmoother.create({
-            wrapper: "#smooth-wrapper",
+<script>
+    gsap.registerPlugin(ScrollSmoother);
+    
+    ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
             content: "#smooth-content",
             smooth: 2, // Adjust speed (higher = slower)
             effects: true
@@ -1462,30 +1461,13 @@
 
     </script>
 
-<script>
-    // document.addEventListener("contextmenu", (event) => event.preventDefault());
-document.addEventListener("keydown", (event) => {
-    if (event.ctrlKey && (event.key === "u" || event.key === "s" || event.key === "i" || event.key === "j")) {
-        event.preventDefault();
-    }
-});
-document.addEventListener("contextmenu", (event) => event.preventDefault()); // Disable right-click
-
-document.addEventListener("keydown", (event) => {
-    if (
-        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) || // Ctrl+Shift+I or Ctrl+Shift+J
-        (event.ctrlKey && event.key === "U") || // Ctrl+U
-        event.key === "F12" // F12
-    ) {
-        event.preventDefault();
-    }
-});
-</script>
 
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script src="script.js"></script>
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
