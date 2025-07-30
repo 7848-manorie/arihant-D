@@ -220,31 +220,35 @@
                 </div>
             </div>
 
-            <!-- Carousel -->
+           <!-- Carousel -->
             <div class="carousel">
 
                 <div>
                     <img src="https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi.jpg?updatedAt=1753171685636" alt="">
                 </div>
                 <div>
-                    <video>
+                    <video muted autoplay playsinline>
                         <source
                             src="https://ik.imagekit.io/dqel2bwws/Parth%20&%20Niki's%20teaser.mp4?updatedAt=1753167450727"
                             type="video/mp4" />
-                        <button class="mute-toggle">🔇</button>
+
                     </video>
                 </div>
                 <div>
-                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/insta-1.jpg?updatedAt=1753171735096" alt="Image 2" />
+                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/insta-1.jpg?updatedAt=1753171735096"
+                        alt="Image 2" />
                 </div>
                 <div>
-                    <video>
-                        <source src="https://ik.imagekit.io/loh3uvdal/Wedding%20Highlight%20__%20Parth%20&%20Nishita.mp4?updatedAt=1753466460895" type="video/mp4" />
-                        <button class="mute-toggle">🔇</button>
+                    <video muted autoplay playsinline>
+                        <source
+                            src="https://ik.imagekit.io/dqel2bwws/wedding-highlight-parth-nishita-wn_Ly9PNvVy.mp4?updatedAt=1753170122335"
+                            type="video/mp4" />
+
                     </video>
                 </div>
                 <div>
-                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-11.jpg?updatedAt=1753171728721" alt="Image 2" />
+                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-11.jpg?updatedAt=1753171728721"
+                        alt="Image 2" />
                 </div>
             </div>
 
@@ -254,7 +258,7 @@
             <!-- Slick JS -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
 
-            <script>
+         <script>
                 $(document).ready(function () {
                     const $carousel = $('.carousel');
 
@@ -285,6 +289,7 @@
                         if (video) {
                             slick.slickPause();
                             video.currentTime = 0;
+                            video.muted = true; // make sure it's muted
 
                             const playPromise = video.play();
                             if (playPromise !== undefined) {
@@ -300,6 +305,7 @@
                         } else {
                             slick.slickPlay();
                         }
+
                     });
 
                     // Mute video on scroll past 10%, unmute below
@@ -324,7 +330,6 @@
                     });
                 });
             </script>
-
             <script>
                 // Mute/Unmute toggle
                 // $carousel.on('click', '.mute-toggle', function (e) {
@@ -404,7 +409,7 @@
             </section> -->
             <!-- blogs  -->
 
-            <!-- ivory about us -->
+            <!-- about us -->
             <section class="ivory-about">
                 <div class="container py-3">
                     <div class="row">
@@ -440,7 +445,7 @@
                     </div>
                 </div>
             </section>
-            <!-- ivory about us -->
+            <!-- about us -->
 
             <!-- grid -->
             <div class="discover-grid pb-5">
