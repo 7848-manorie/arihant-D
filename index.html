@@ -26,7 +26,7 @@
     <!-- bootstrap js -->
 
     <!-- bootstrap icon -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- bootstrap icon -->
 
     <!-- gsap -->
@@ -221,35 +221,28 @@
             </div>
 
            <!-- Carousel -->
-            <div class="carousel">
+           <div class="carousel">
+                <div><img src="https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi.jpg" alt=""></div>
 
-                <div>
-                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi.jpg?updatedAt=1753171685636" alt="">
-                </div>
-                <div>
-                    <video muted autoplay playsinline>
-                        <source
-                            src="https://ik.imagekit.io/dqel2bwws/Parth%20&%20Niki's%20teaser.mp4?updatedAt=1753167450727"
+                <div class="video-slide">
+                    <video muted autoplay loop playsinline>
+                        <source src="https://ik.imagekit.io/dqel2bwws/Parth%20&%20Niki's%20teaser.mp4"
                             type="video/mp4" />
-
                     </video>
+                    <button class="mute-toggle"><i class="bi bi-volume-mute-fill"></i></button>
                 </div>
-                <div>
-                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/insta-1.jpg?updatedAt=1753171735096"
-                        alt="Image 2" />
-                </div>
-                <div>
-                    <video muted autoplay playsinline>
-                        <source
-                            src="https://ik.imagekit.io/dqel2bwws/wedding-highlight-parth-nishita-wn_Ly9PNvVy.mp4?updatedAt=1753170122335"
+
+                <div><img src="https://ik.imagekit.io/dqel2bwws/imgaes/insta-1.jpg" alt=""></div>
+
+                <div class="video-slide">
+                    <video muted autoplay loop playsinline>
+                        <source src="https://ik.imagekit.io/loh3uvdal/Wedding%20Highlight%20__%20Parth%20&%20Nishita.mp4?updatedAt=1753466460895"
                             type="video/mp4" />
-
                     </video>
+                    <button class="mute-toggle"><i class="bi bi-volume-mute-fill"></i></button>
                 </div>
-                <div>
-                    <img src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-11.jpg?updatedAt=1753171728721"
-                        alt="Image 2" />
-                </div>
+
+                <div><img src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-11.jpg" alt=""></div>
             </div>
 
             <!-- jQuery -->
@@ -258,76 +251,88 @@
             <!-- Slick JS -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
 
-         <script>
+        <script>
                 $(document).ready(function () {
                     const $carousel = $('.carousel');
 
                     $carousel.slick({
                         infinite: true,
                         autoplay: true,
-                        autoplaySpeed: 7000,
+                        autoplaySpeed: 6000,
                         arrows: false,
                         dots: true,
                         speed: 800,
-                        pauseOnHover: false,
-                        // prevArrow: '<button type="button" class="slick-prev"><i class="fa-brands fa-searchengin"></i></button>',
-                        // nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>'
+                        pauseOnHover: false
                     });
 
-                    // Pause all carousel videos before slide change
                     $carousel.on('beforeChange', function () {
                         $carousel.find('video').each(function () {
                             this.pause();
                         });
                     });
 
-                    // Play video after slide change
                     $carousel.on('afterChange', function (event, slick, currentSlide) {
-                        const currentSlideEl = slick.$slides.get(currentSlide);
-                        const video = $(currentSlideEl).find('video').get(0);
+                        const $currentSlide = $(slick.$slides.get(currentSlide));
+                        const video = $currentSlide.find('video').get(0);
 
                         if (video) {
                             slick.slickPause();
                             video.currentTime = 0;
-                            video.muted = true; // make sure it's muted
+                            video.muted = true;
 
-                            const playPromise = video.play();
-                            if (playPromise !== undefined) {
-                                playPromise.then(() => {
-                                    video.onended = () => {
+                            setTimeout(() => {
+                                const playPromise = video.play();
+                                if (playPromise !== undefined) {
+                                    playPromise.then(() => {
+                                        video.onended = () => slick.slickPlay();
+                                    }).catch(err => {
+                                        console.log("Autoplay error:", err);
                                         slick.slickPlay();
-                                    };
-                                }).catch(error => {
-                                    console.log("Autoplay error:", error);
-                                    slick.slickPlay();
-                                });
-                            }
+                                    });
+                                }
+                            }, 100);
+
+                            // Reset icon to muted
+                            const icon = $currentSlide.find('.mute-toggle i');
+                            icon.attr('class', 'bi bi-volume-mute-fill');
                         } else {
                             slick.slickPlay();
                         }
-
                     });
 
-                    // Mute video on scroll past 10%, unmute below
-                    $(window).on('scroll', function () {
-                        const scrollTop = $(window).scrollTop();
-                        const docHeight = $(document).height() - $(window).height();
-                        const scrollPercent = (scrollTop / docHeight) * 100;
+                    // ✅ Toggle volume when mute button is clicked
+                    $(document).on('click', '.mute-toggle, .mute-toggle i', function (e) {
+                        e.stopPropagation();
 
-                        // Get the current slick slide
-                        const slickInstance = $carousel.slick('getSlick');
-                        const currentSlide = slickInstance.currentSlide;
-                        const currentSlideEl = slickInstance.$slides.get(currentSlide);
-                        const video = $(currentSlideEl).find('video').get(0);
+                        const $btn = $(this).closest('.mute-toggle'); // supports both button or icon click
+                        const video = $btn.siblings('video').get(0);
+                        const icon = $btn.find('i');
 
                         if (video) {
-                            if (scrollPercent > 9) {
-                                video.muted = true;
-                            } else {
-                                video.muted = false;
-                            }
+                            video.muted = !video.muted;
+                            icon.attr('class', video.muted ? 'bi bi-volume-mute-fill' : 'bi bi-volume-down-fill');
                         }
                     });
+
+
+
+                    // ✅ Also toggle volume on video click
+                    $(document).on('click', '.carousel video', function () {
+                        this.muted = !this.muted;
+                        const icon = $(this).siblings('.mute-toggle').find('i');
+
+                        if (this.muted) {
+                            icon.attr('class', 'bi bi-volume-mute-fill');
+                        } else {
+                            icon.attr('class', 'bi bi-volume-down-fill');
+                        }
+                    });
+
+                    $carousel.on('init', function () {
+                        $carousel.trigger('afterChange', [$carousel.slick('getSlick'), 0]);
+                    });
+
+                    $carousel.slick('setPosition');
                 });
             </script>
             <script>
@@ -942,6 +947,13 @@
                             </video>
                         </div>
                     </div>
+                    <div class="item">
+                        <div>
+                            <video class="js-player" crossorigin playsinline>
+                                <source src="https://ik.imagekit.io/loh3uvdal/Deep&Anusha.mp4?updatedAt=1754068628005" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
 
                 </div>
             </section>
@@ -1185,7 +1197,7 @@
             <!-- testimonials new-->
 
             <!-- testimonials new-->
-            <script>
+           <script>
                 document.addEventListener("DOMContentLoaded", function () {
                     const testimonials = [
                         {
@@ -1203,6 +1215,12 @@
                             img: "https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi-testimonials-2.jpg?updatedAt=1753171685293",
                             text: "“Thank you so much for making our day so special! 🤍 We loved everything, and the attention to detail was simply amazing. 🔵 We’re beyond happy with your work, and I’m at a loss for words—it was surreal to witness everything. ❤️ Once again, thank you so much! 🥹”",
                             name: "Aagam & Aangi"
+                        },
+
+                        {
+                            img: "https://ik.imagekit.io/dqel2bwws/Rishil&Riya.jpg?updatedAt=1754049457140",
+                            text: "“Hi Tirth,We just finished going through all the pictures and videos, and I wanted to take a moment to truly appreciate the amazing work you and your team have done.The videos were edited so perfectly that I didn’t feel the need to ask for a single change. The photographs came out beautifully as well. What impressed me the most was your prompt delivery — you shared all the data within just 2 days of the event, which is truly commendable.Thank you for making my event even more special by capturing such lovely moments and presenting them so professionally. Keep up the fantastic work! I’ll definitely be recommending your services to anyone in need of photography or videography for their events.”",
+                            name: "Rishil & Riya"
                         },
 
                         // {
@@ -1253,28 +1271,48 @@
             </script>
             <!-- testimonials new-->
 
-            <!-- instagram -->
-            <section oncontextmenu="return false;" class="instagram py-5 pt-5  text-center">
+           <!-- instagram -->
+            <section oncontextmenu="return false;" class="instagram py-5 pt-5 text-center">
                 <h2 class="">Instagram</h2>
                 <div class="row">
-                    <div class="insta-img py-5 ">
+                    <div class="insta-img py-5">
                         <div class="row d-flex g-0">
+
                             <img data-aos="fade-up"
-                                onclick="window.location.href='https:www.instagram.com/reels/DFbnjnOzwwm/'"
-                                src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-2.jpg?updatedAt=1753171730696" alt="" class="img-fluid">
-                            <img data-aos="fade-up" src="https://ik.imagekit.io/dqel2bwws/imgaes/jigar-sangeeta-insta.jpg?updatedAt=1753171735373" alt="" class="img-fluid">
-                            <img data-aos="fade-up" src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-10.jpg?updatedAt=1753171727859" alt="" class="img-fluid">
-                            <img data-aos="fade-up" src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-12.jpg?updatedAt=1753171728206" alt="" class="img-fluid">
-                            <img data-aos="fade-up" src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-13.jpg?updatedAt=1753171728250" alt="" class="img-fluid">
+                                onclick="window.location.href='https:/www.instagram.com/p/Co6m1HgpXq6/?img_index=1'"
+                                src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-2.jpg?updatedAt=1753171730696"
+                                alt="" class="img-fluid">
+
+                            <img data-aos="fade-up"
+                                onclick="window.location.href='https:/www.instagram.com/p/DGK--ZrpiLj/?img_index=1'"
+                                src="https://ik.imagekit.io/dqel2bwws/imgaes/jigar-sangeeta-insta.jpg?updatedAt=1753171735373"
+                                alt="" class="img-fluid">
+
+                            <img data-aos="fade-up"
+                                onclick="window.location.href='https:/www.instagram.com/p/DANBA_6IlYo/?img_index=1'"
+                                src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-10.jpg?updatedAt=1753171727859"
+                                alt="" class="img-fluid">
+
+                            <img data-aos="fade-up"
+                                onclick="window.location.href='https:/www.instagram.com/p/C3FpY5Mtcgg/?img_index=1'"
+                                src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-12.jpg?updatedAt=1753171728206"
+                                alt="" class="img-fluid">
+
+                            <img data-aos="fade-up"
+                                onclick="window.location.href='https:/www.instagram.com/p/CxZ5S_jP1PZ/'"
+                                src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-13.jpg?updatedAt=1753171728250"
+                                alt="" class="img-fluid">
+
                         </div>
                     </div>
                 </div>
-                <a class="text-center follow-me mt-lg-5 mt-md-5 mt-2" target="_blank"
-                    href="https://www.instagram.com/arihantstudiosurat/">follow us @arihantstudio</a>
+
+                <a class="text-center follow-me mt-lg-5 mt-md-5 mt-2"
+                    href="https://www.instagram.com/arihantstudio.in/">follow us @arihantstudio.in</a>
             </section>
             <!-- instagram -->
 
-            <!-- footer -->
+           <!-- footer -->
             <section class="footer">
                 <div class="container ">
                     <div class="row p-lg-5 p-md-5 p-2">
@@ -1289,7 +1327,7 @@
                             <div class="footer-content mt-lg-0 mt-md-5 mt-5">
                                 <p class="text-center">Social</p>
                                 <ul class="d-flex mb-0 p-0 gap-3 text-center footer-social-links">
-                                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="https://www.instagram.com/arihantstudio.in/"><i class="fa-brands fa-instagram"></i></a></li>
                                     <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
                                     <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
                                 </ul>
@@ -1309,12 +1347,12 @@
 
                                 <div class="list d-flex">
                                     <ul class="d-md-flex col-lg-6 col-md-6 col-6  ">
-                                        <li><a class="text-dark" href="">portfolio</a></li>
-                                        <li><a class="text-dark" href="">about</a></li>
+                                        <li><a class="text-dark" href="./portfolio.html">portfolio</a></li>
+                                        <li><a class="text-dark" href="./about.html">about</a></li>
 
                                     </ul>
                                     <ul class="d-md-flex col-lg-6 col-md-6 col-6">
-                                        <li class="padding-left"><a class="text-dark" href="">Gallery</a></li>
+                                        <li class="padding-left"><a class="text-dark" href="./gallery.html">Gallery</a></li>
                                         <li><a class="text-dark" href="">Contact</a></li>
                                     </ul>
                                 </div>
