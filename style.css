@@ -399,11 +399,12 @@ ul li a {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
-  border-radius: 50%;
+  border-radius: 50% !important;
   padding: 10px 15px;
   opacity: 0.7;
   cursor:pointer;
   font-size: 18px;
+  outline:none;
 }
 .social-links a {
   color: white;
