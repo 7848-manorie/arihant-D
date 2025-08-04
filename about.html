@@ -63,7 +63,7 @@
 
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="about-media.css">
-
+    <link rel="stylesheet" href="./media.css">
 </head>
 
 <body>
@@ -78,10 +78,10 @@
                 <li class="mt-4 text-center"><a href="portfolio.html">Portfolio </a></li>
                 <li class="mt-4 text-center"><a href="about.html">About</a></li>
                 <li class="mt-4 text-center"><a href="gallery.html">Gallery</a></li>
-                <li class="mt-4 text-center"><a href="">Contact</a></li>
-                <li class="mt-4 text-center"><a href=""><i class="fa-brands fa-instagram"></i>
+                <li class="mt-4 text-center"><a href="./contact.html">Contact</a></li>
+                <li class="mt-4 text-center"><a href="https://www.instagram.com/arihantstudio.in/"><i class="fa-brands fa-instagram"></i>
                     </a></li>
-                <li><a href="">Get in touch</a></li>
+                <li><a href="./contact.html">Get in touch</a></li>
             </ul>
         </div>
     </section>
@@ -101,7 +101,7 @@
                         <li><a class="text-dark" href="./about.html">About</a></li>
                         <li><a class="text-dark" href="./portfolio.html">Portfolio</a></li>
                         <li><a class="text-dark" href="gallery.html">Gallery</a></li>
-                        <li><a class="text-dark" href="">Contact</a></li>
+                        <li><a class="text-dark" href="./contact.html">Contact</a></li>
                         <!-- <li><a class="" href=""><i id="list-icon" class="fa-solid fa-list-timeline"></i></a></li> -->
                     </ul>
                 </div>
@@ -265,71 +265,77 @@
     <!-- testimonials  -->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const testimonials = [
-                {
-                    img: "./imgaes/Divy&karina_testimoinals-2.jpg",
-                    text: "“The work done by Arihant Studio on my wedding is exceptional. All the people are very friendly and it seemed like they were more interested than us to get good photos 😄 The main thing I liked about you all is speed - we would get high quality reels and photos same day/ next day of the event which is truly appreciated ✨🙌”",
-                    name: "Divy & Karina"
-                },
+                document.addEventListener("DOMContentLoaded", function () {
+                    const testimonials = [
+                        {
+                            img: "https://ik.imagekit.io/dqel2bwws/imgaes/Divy&karina_testimoinals-2.jpg?updatedAt=1753171717459",
+                            text: "“The work done by Arihant Studio on my wedding is exceptional. All the people are very friendly and it seemed like they were more interested than us to get good photos 😄 The main thing I liked about you all is speed - we would get high quality reels and photos same day/ next day of the event which is truly appreciated ✨🙌”",
+                            name: "Divy & Karina"
+                        },
 
-                {
-                    img: "./imgaes/sparsh and vama testimonial.jpeg",
-                    text: "“Hyy Tirth Just wanted to thank you for the efforts u had taken!Really loved the outcomeIt was our first time and u made us feel so comfortable in front of the camera Had a great time filming itAnd everyone has appreciated your work as well they all loved it Thank you so much once again💓”",
-                    name: "Sparsh & Vama"
-                },
-                {
-                    img: "./imgaes/aagam-aangi-testimonials-2.jpg",
-                    text: "“Thank you so much for making our day so special! 🤍 We loved everything, and the attention to detail was simply amazing. 🔵 We’re beyond happy with your work, and I’m at a loss for words—it was surreal to witness everything. ❤️ Once again, thank you so much! 🥹”",
-                    name: "Aagam & Aangi"
-                },
+                        {
+                            img: "https://ik.imagekit.io/dqel2bwws/imgaes/sparsh%20and%20vama%20testimonial.jpeg?updatedAt=1753171761554",
+                            text: "“Hyy Tirth Just wanted to thank you for the efforts u had taken!Really loved the outcomeIt was our first time and u made us feel so comfortable in front of the camera Had a great time filming itAnd everyone has appreciated your work as well they all loved it Thank you so much once again💓”",
+                            name: "Sparsh & Vama"
+                        },
+                        {
+                            img: "https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi-testimonials-2.jpg?updatedAt=1753171685293",
+                            text: "“Thank you so much for making our day so special! 🤍 We loved everything, and the attention to detail was simply amazing. 🔵 We’re beyond happy with your work, and I’m at a loss for words—it was surreal to witness everything. ❤️ Once again, thank you so much! 🥹”",
+                            name: "Aagam & Aangi"
+                        },
 
-                // {
-                //     img: "./imgaes/Dhruv-testimonials-1.jpg",
-                //     text: "“A huge thank you to Tirth Bhai and the entire team for capturing the Dhaja moments so beautifully!Your dedication, creativity, and attention to detail made every shot truly special.The outcome is beyond amazing. Grateful for your hard work and talent! 📸✨”",
-                //     name: "Sophia & Liam"
-                // },
-                // {
-                //     img: "https://firstsight.design/palette/multi/wp-content/uploads/2020/12/Portfolio_2222@4x.jpg",
-                //     text: "“Kaya Mason is just an awesome photographer and great person. Even if it’s your first photo session, don’t worry, Kaya will calm you down, give a lot of helpful tips and suggestions. She is so calm and attentive! My entire family was impressed by her and the photographs she took.”",
-                //     name: "Sophia & Liam"
-                // },
-            ];
+                        {
+                            img: "https://ik.imagekit.io/dqel2bwws/Rishil&Riya.jpg?updatedAt=1754049457140",
+                            text: "“Hi Tirth,We just finished going through all the pictures and videos, and I wanted to take a moment to truly appreciate the amazing work you and your team have done.The videos were edited so perfectly that I didn’t feel the need to ask for a single change. The photographs came out beautifully as well. What impressed me the most was your prompt delivery — you shared all the data within just 2 days of the event, which is truly commendable.Thank you for making my event even more special by capturing such lovely moments and presenting them so professionally. Keep up the fantastic work! I’ll definitely be recommending your services to anyone in need of photography or videography for their events.”",
+                            name: "Rishil & Riya"
+                        },
 
-            let currentIndex = 0;
-            const imgElement = document.getElementById("testimonial-img");
-            const textElement = document.getElementById("testimonial-text");
-            const nameElement = document.getElementById("testimonial-name");
+                        // {
+                        //     img: "./imgaes/Dhruv-testimonials-1.jpg",
+                        //     text: "“A huge thank you to Tirth Bhai and the entire team for capturing the Dhaja moments so beautifully!Your dedication, creativity, and attention to detail made every shot truly special.The outcome is beyond amazing. Grateful for your hard work and talent! 📸✨”",
+                        //     name: "Sophia & Liam"
+                        // },
+                        // {
+                        //     img: "https://firstsight.design/palette/multi/wp-content/uploads/2020/12/Portfolio_2222@4x.jpg",
+                        //     text: "“Kaya Mason is just an awesome photographer and great person. Even if it’s your first photo session, don’t worry, Kaya will calm you down, give a lot of helpful tips and suggestions. She is so calm and attentive! My entire family was impressed by her and the photographs she took.”",
+                        //     name: "Sophia & Liam"
+                        // },
+                    ];
 
-            function updateTestimonial(index) {
-                // Fade out
-                imgElement.classList.add("fade-out");
-                textElement.classList.add("fade-out");
-                nameElement.classList.add("fade-out");
+                    let currentIndex = 0;
+                    const imgElement = document.getElementById("testimonial-img");
+                    const textElement = document.getElementById("testimonial-text");
+                    const nameElement = document.getElementById("testimonial-name");
 
-                setTimeout(() => {
-                    imgElement.src = testimonials[index].img;
-                    textElement.innerHTML = testimonials[index].text;
-                    nameElement.innerHTML = testimonials[index].name;
+                    function updateTestimonial(index) {
+                        // Fade out
+                        imgElement.classList.add("fade-out");
+                        textElement.classList.add("fade-out");
+                        nameElement.classList.add("fade-out");
 
-                    // Fade in
-                    imgElement.classList.remove("fade-out");
-                    textElement.classList.remove("fade-out");
-                    nameElement.classList.remove("fade-out");
-                }, 500); // Matches the CSS transition duration
-            }
+                        setTimeout(() => {
+                            imgElement.src = testimonials[index].img;
+                            textElement.innerHTML = testimonials[index].text;
+                            nameElement.innerHTML = testimonials[index].name;
 
-            document.getElementById("prev-testimonial").addEventListener("click", function () {
-                currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-                updateTestimonial(currentIndex);
-            });
+                            // Fade in
+                            imgElement.classList.remove("fade-out");
+                            textElement.classList.remove("fade-out");
+                            nameElement.classList.remove("fade-out");
+                        }, 500); // Matches the CSS transition duration
+                    }
 
-            document.getElementById("next-testimonial").addEventListener("click", function () {
-                currentIndex = (currentIndex + 1) % testimonials.length;
-                updateTestimonial(currentIndex);
-            });
-        });
-    </script>
+                    document.getElementById("prev-testimonial").addEventListener("click", function () {
+                        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                        updateTestimonial(currentIndex);
+                    });
+
+                    document.getElementById("next-testimonial").addEventListener("click", function () {
+                        currentIndex = (currentIndex + 1) % testimonials.length;
+                        updateTestimonial(currentIndex);
+                    });
+                });
+            </script>
     <!-- testimonials -->
 
     <script>
@@ -361,27 +367,27 @@
                         <div class="row d-flex g-0">
 
                             <img data-aos="fade-up"
-                                onclick="window.location.href='https:/www.instagram.com/p/Co6m1HgpXq6/?img_index=1'"
+                                onclick="window.location.href='https://www.instagram.com/p/Co6m1HgpXq6/?img_index=1'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-2.jpg?updatedAt=1753171730696"
                                 alt="" class="img-fluid">
 
                             <img data-aos="fade-up"
-                                onclick="window.location.href='https:/www.instagram.com/p/DGK--ZrpiLj/?img_index=1'"
+                                onclick="window.location.href='https://www.instagram.com/p/DGK--ZrpiLj/?img_index=1'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/jigar-sangeeta-insta.jpg?updatedAt=1753171735373"
                                 alt="" class="img-fluid">
 
                             <img data-aos="fade-up"
-                                onclick="window.location.href='https:/www.instagram.com/p/DANBA_6IlYo/?img_index=1'"
+                                onclick="window.location.href='https://www.instagram.com/p/DANBA_6IlYo/?img_index=1'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-10.jpg?updatedAt=1753171727859"
                                 alt="" class="img-fluid">
 
                             <img data-aos="fade-up"
-                                onclick="window.location.href='https:/www.instagram.com/p/C3FpY5Mtcgg/?img_index=1'"
+                                onclick="window.location.href='https://www.instagram.com/p/C3FpY5Mtcgg/?img_index=1'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-12.jpg?updatedAt=1753171728206"
                                 alt="" class="img-fluid">
 
                             <img data-aos="fade-up"
-                                onclick="window.location.href='https:/www.instagram.com/p/CxZ5S_jP1PZ/'"
+                                onclick="window.location.href='https://www.instagram.com/p/CxZ5S_jP1PZ/'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-13.jpg?updatedAt=1753171728250"
                                 alt="" class="img-fluid">
 
@@ -435,7 +441,7 @@
                             </ul>
                             <ul class="d-md-flex col-lg-6 col-md-6 col-6">
                                 <li class="padding-left"><a class="text-dark" href="./gallery.html">Gallery</a></li>
-                                <li><a class="text-dark" href="">Contact</a></li>
+                                <li><a class="text-dark" href="./contact.html">Contact</a></li>
                             </ul>
                         </div>
 
