@@ -79,38 +79,35 @@
 <body id="text" class="loading">
     <div class="loader">
         <div class="body-loader">
-            <video autoplay muted playsinline webkit-playsinline>
-                <source src="https://ik.imagekit.io/loh3uvdal/Final%20Comp-1.mp4?updatedAt=1753469128880">
-            </video>
+        <video autoplay muted playsinline webkit-playsinline>
+            <source src="./videos/Arihant Videos/Final Comp-1.mp4" type="video/mp4">
+        </video>
+
         </div>
     </div>
     <!-- loader  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        // Detect if the page was refreshed
-        const navigationType = performance.getEntriesByType("navigation")[0]?.type;
+    window.addEventListener('load', function () {
+      const navigationType = performance.getEntriesByType("navigation")[0]?.type;
+      const loaderAlreadyShown = sessionStorage.getItem('loaderShown');
 
-        $(document).ready(function () {
-            const loaderAlreadyShown = sessionStorage.getItem('loaderShown');
+      if (navigationType === 'reload' || !loaderAlreadyShown) {
+        document.querySelector(".loader").style.display = "flex";
+        document.body.classList.add("loading");
 
-            if (navigationType === 'reload' || !loaderAlreadyShown) {
-                // Show loader on refresh or first load
-                $(".loader, .body-loader").show();
-                $("body").addClass("loading");
-
-                setTimeout(function () {
-                    $(".loader, .body-loader").fadeOut(500);
-                    $("body").removeClass("loading");
-                    sessionStorage.setItem('loaderShown', 'true'); // Mark as shown
-                }, 6000);
-            } else {
-                // Hide loader if navigating between pages
-                $(".loader, .body-loader").hide();
-                $("body").removeClass("loading");
-            }
-        });
-    </script>
+        setTimeout(() => {
+          document.querySelector(".loader").style.display = "none";
+          document.body.classList.remove("loading");
+          sessionStorage.setItem('loaderShown', 'true');
+        }, 6000);
+      } else {
+        document.querySelector(".loader").style.display = "none";
+        document.body.classList.remove("loading");
+      }
+    });
+  </script>
 
     <div id="smooth-wrapper">
         <div id="smooth-content">
