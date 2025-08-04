@@ -251,7 +251,7 @@
             <!-- Slick JS -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
 
-        <script>
+      <script>
                 $(document).ready(function () {
                     const $carousel = $('.carousel');
 
@@ -305,9 +305,8 @@
                         e.stopPropagation();
 
                         const $btn = $(this).closest('.mute-toggle'); // supports both button or icon click
-                        const video = $btn.siblings('video').get(0);
+                        const video = $btn.parent().find('video').get(0);
                         const icon = $btn.find('i');
-
                         if (video) {
                             video.muted = !video.muted;
                             icon.attr('class', video.muted ? 'bi bi-volume-mute-fill' : 'bi bi-volume-down-fill');
@@ -335,6 +334,7 @@
                     $carousel.slick('setPosition');
                 });
             </script>
+            
             <script>
                 // Mute/Unmute toggle
                 // $carousel.on('click', '.mute-toggle', function (e) {

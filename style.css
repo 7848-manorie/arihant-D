@@ -1089,19 +1089,7 @@ ul li a {
   opacity: 1;
 }
 /* Headline css */
-.mute-toggle {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 9999;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
+
 
 .slick-prev,
 .slick-next {
