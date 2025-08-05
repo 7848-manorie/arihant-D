@@ -122,7 +122,7 @@ ul li {
 .loader video {
   width:100vw;
   height:100vh;
-    display: block;  
+    display: block;
   object-fit: cover;
 }
 

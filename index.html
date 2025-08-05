@@ -79,35 +79,38 @@
 <body id="text" class="loading">
     <div class="loader">
         <div class="body-loader">
-        <video autoplay muted playsinline webkit-playsinline>
-            <source src="./videos/Arihant Videos/Final Comp-1.mp4" type="video/mp4">
-        </video>
-
+            <video autoplay muted>
+                <source src="https://ik.imagekit.io/loh3uvdal/Final%20Comp-1.mp4?updatedAt=1753469128880">
+            </video>
         </div>
     </div>
     <!-- loader  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    window.addEventListener('load', function () {
-      const navigationType = performance.getEntriesByType("navigation")[0]?.type;
-      const loaderAlreadyShown = sessionStorage.getItem('loaderShown');
+        // Detect if the page was refreshed
+        const navigationType = performance.getEntriesByType("navigation")[0]?.type;
 
-      if (navigationType === 'reload' || !loaderAlreadyShown) {
-        document.querySelector(".loader").style.display = "flex";
-        document.body.classList.add("loading");
+        $(document).ready(function () {
+            const loaderAlreadyShown = sessionStorage.getItem('loaderShown');
 
-        setTimeout(() => {
-          document.querySelector(".loader").style.display = "none";
-          document.body.classList.remove("loading");
-          sessionStorage.setItem('loaderShown', 'true');
-        }, 6000);
-      } else {
-        document.querySelector(".loader").style.display = "none";
-        document.body.classList.remove("loading");
-      }
-    });
-  </script>
+            if (navigationType === 'reload' || !loaderAlreadyShown) {
+                // Show loader on refresh or first load
+                $(".loader, .body-loader").show();
+                $("body").addClass("loading");
+
+                setTimeout(function () {
+                    $(".loader, .body-loader").fadeOut(500);
+                    $("body").removeClass("loading");
+                    sessionStorage.setItem('loaderShown', 'true'); // Mark as shown
+                }, 6000);
+            } else {
+                // Hide loader if navigating between pages
+                $(".loader, .body-loader").hide();
+                $("body").removeClass("loading");
+            }
+        });
+    </script>
 
     <div id="smooth-wrapper">
         <div id="smooth-content">
@@ -248,14 +251,14 @@
             <!-- Slick JS -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
 
-      <script>
+        <script>
                 $(document).ready(function () {
                     const $carousel = $('.carousel');
 
                     $carousel.slick({
                         infinite: true,
                         autoplay: true,
-                        autoplaySpeed: 7500,
+                        autoplaySpeed: 6000,
                         arrows: false,
                         dots: true,
                         speed: 800,
@@ -302,8 +305,9 @@
                         e.stopPropagation();
 
                         const $btn = $(this).closest('.mute-toggle'); // supports both button or icon click
-                        const video = $btn.parent().find('video').get(0);
+                        const video = $btn.siblings('video').get(0);
                         const icon = $btn.find('i');
+
                         if (video) {
                             video.muted = !video.muted;
                             icon.attr('class', video.muted ? 'bi bi-volume-mute-fill' : 'bi bi-volume-down-fill');
@@ -331,7 +335,6 @@
                     $carousel.slick('setPosition');
                 });
             </script>
-            
             <script>
                 // Mute/Unmute toggle
                 // $carousel.on('click', '.mute-toggle', function (e) {
@@ -1299,6 +1302,7 @@
                                 onclick="window.location.href='https://www.instagram.com/p/CxZ5S_jP1PZ/'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-13.jpg?updatedAt=1753171728250"
                                 alt="" class="img-fluid">
+
                         </div>
                     </div>
                 </div>
