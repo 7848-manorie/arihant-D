@@ -12,8 +12,7 @@
   color: black;
   background: #d6cdc0;
 }
-body,
-html {
+body,html {
   overflow-x: hidden;
   scroll-behavior: smooth;
   margin: 0;

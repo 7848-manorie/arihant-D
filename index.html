@@ -49,7 +49,8 @@
 
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <!-- aos css -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+     <link rel="stylesheet" href="./css/aos.css">
     <!-- aos css-->
 
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -120,48 +121,7 @@
             <a id="button"></a>
             <!-- back to top button -->
 
-            <!-- banner -->
-            <!-- <section>
-         <div class="banner-main">
-            <div class="container-fluid">
-                <div class="row py-3 d-flex align-items-center">
-                    <div class="col-4">
 
-                    </div>
-                    <div class="col-4 d-flex justify-content-center">
-                        <a class="logo" href="">Arihant Studio</a>
-                    </div>
-                    <div class="col-4">
-                        <ul class="d-flex justify-content-end gap-3 me-4 social-links">
-                            <li><a href=""><i class="ri-instagram-line"></i></a></li>
-                            <li><a href=""><i class="ri-whatsapp-line"></i></a></li>
-                            <li><a href=""><i class="ri-facebook-fill"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="border-main"></div>
-                        <ul class="d-flex justify-content-center gap-4 navbar-main">
-                            <li><a href="">PORTFOLIO</a></li>
-                            <li><a href="">TIPS</a></li>
-                            <li><a href="">ABOUT</a></li>
-                            <li><a href="">PRICING</a></li>
-                            <li><a href="">WORKSHOPS</a></li>
-                            <li><a href="">SHOP</a></li>
-                            <li><a href="">CONTACT</a></li>
-                            <li><a href="">BLOG</a></li>
-                            <li><a href="">PROOFING GALLERY</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <p>I don’t take a photograph. <br> I ask quietly to borrow it.</p>
-         </div>
-          </section> -->
-            <!-- banner -->
 
             <!-- menu-bar -->
             <section>
@@ -174,7 +134,8 @@
                         <li class="mt-4 text-center"><a href="about.html">About</a></li>
                         <li class="mt-4 text-center"><a href="gallery.html">Gallery</a></li>
                         <li class="mt-4 text-center"><a href="./contact.html">Contact</a></li>
-                        <li class="mt-4 text-center"><a href="https://www.instagram.com/arihantstudio.in/"><i class="fa-brands fa-instagram"></i>
+                        <li class="mt-4 text-center"><a href="https://www.instagram.com/arihantstudio.in/"><i
+                                    class="fa-brands fa-instagram"></i>
                             </a></li>
                         <li><a href="./contact.html ">Get in touch</a></li>
                     </ul>
@@ -220,8 +181,8 @@
                 </div>
             </div>
 
-           <!-- Carousel -->
-           <div class="carousel">
+            <!-- Carousel -->
+            <div class="carousel">
                 <div><img src="https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi.jpg" alt=""></div>
 
                 <div class="video-slide">
@@ -236,7 +197,8 @@
 
                 <div class="video-slide">
                     <video muted autoplay loop playsinline>
-                        <source src="https://ik.imagekit.io/loh3uvdal/Wedding%20Highlight%20__%20Parth%20&%20Nishita.mp4?updatedAt=1753466460895"
+                        <source
+                            src="https://ik.imagekit.io/loh3uvdal/Wedding%20Highlight%20__%20Parth%20&%20Nishita.mp4?updatedAt=1753466460895"
                             type="video/mp4" />
                     </video>
                     <button class="mute-toggle"><i class="bi bi-volume-mute-fill"></i></button>
@@ -251,7 +213,8 @@
             <!-- Slick JS -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
 
-        <script>
+            <!-- carousel script  -->
+            <script>
                 $(document).ready(function () {
                     const $carousel = $('.carousel');
 
@@ -335,84 +298,7 @@
                     $carousel.slick('setPosition');
                 });
             </script>
-            <script>
-                // Mute/Unmute toggle
-                // $carousel.on('click', '.mute-toggle', function (e) {
-                //     e.stopPropagation(); // prevent interfering with slick
-                //     const $btn = $(this);
-                //     const $video = $btn.siblings('video').get(0);
 
-                //     if ($video) {
-                //         $video.muted = !$video.muted;
-                //         $btn.text($video.muted ? '🔇' : '🔊');
-                //     }
-                // });
-
-            </script>
-
-            <!-- about  -->
-            <!-- <section class="about py-lg-5 py-md-5">
-                <div class="container">
-                    <div class="row py-5">
-                        <div class="col-lg-8 col-md-6 col-12 ">
-                            <div class="about-sub">
-                                <div oncontextmenu="return false;" class="about-img d-flex ">
-                                   <img src="" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-12 align-items-center">
-                            <div class="about-content ms-lg-5 ms-md-0 ms-0 mt-3">
-                                <h2 data-aos="fade-up">Nice to Meet You</h2>
-                                <p>Photography was always my passion and my dream job. It’s even difficult for me to
-                                    call it a
-                                    job, as I consider my profession as a hobby of my life. Meeting new people, catching
-                                    their
-                                    mood, being part of the happiest momentы of their life — isn’t it a dream?</p>
-                                <div class="d-flex align-items-center">
-                                    <a class="d-flex align-items-center" href="">About me
-                                        <i class=" align-items-center ms-2 fa-sharp-duotone fa-thin fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-            <!-- about -->
-
-            <!-- blogs  -->
-            <!-- <section class="py-3">
-                <div class="blogs py-5">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-7 col-md-12 col-12 ps-5 pe-lg-0 pe-md-5 pe-5 blogs-img">
-                                <img class="img-fluid " src="./imgaes/wedding-3.jpg" alt="">
-                            </div>
-                            <div class="col-lg-4 col-md-12 col-12  ms-5">
-                                <div class="blog-content ms-md-0 ms-0 mt-3">
-                                    <h2 data-aos="fade-up ">Nice to meet you</h2>
-                                    <p class="pe-5 mt-4">Photography was always my passion and my dream job. It’s even
-                                        difficult for me to
-                                        call it a
-                                        job, as I consider my profession as a hobby of my life. Meeting new people,
-                                        catching
-                                        their
-                                        mood, being part of the happiest momentы of their life — isn’t it a dream?</p>
-                                    <div class="d-flex align-items-center">
-                                        <a class="d-flex align-items-center" href="">About me
-                                            <i
-                                                class=" align-items-center ms-2 fa-sharp-duotone fa-thin fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-1 "></div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-            <!-- blogs  -->
 
             <!-- about us -->
             <section class="ivory-about">
@@ -420,7 +306,9 @@
                     <div class="row">
                         <h1 class="text-center py-4">We find Magic in Mundane, <br>Stories in every frame</h1>
                         <div class="col-lg-4 col-md-6 col-6 order-1 order-lg-1  mt-lg-5 mt-md-5 mt-3">
-                            <img class="img-fluid" src="https://ik.imagekit.io/dqel2bwws/imgaes/sparsh-vama-black&white.jpg?updatedAt=1753171761731" alt="">
+                            <img class="img-fluid"
+                                src="https://ik.imagekit.io/dqel2bwws/imgaes/sparsh-vama-black&white.jpg?updatedAt=1753171761731"
+                                alt="">
                         </div>
                         <div class="col-lg-4 col-md-12 col-12 ivory-para order-3 order-lg-2 p-4 mt-4 ">
                             <p>Welcome to ARIHANT STUDIO — where moments become memories.
@@ -445,14 +333,16 @@
                             </p>
                         </div>
                         <div class="col-lg-4 col-md-6 order-2 order-lg-3 col-6">
-                            <img class="img-fluid" src="https://ik.imagekit.io/dqel2bwws/imgaes/aangi-sinlge-1.jpg?updatedAt=1753171686086" alt="">
+                            <img class="img-fluid"
+                                src="https://ik.imagekit.io/dqel2bwws/imgaes/aangi-sinlge-1.jpg?updatedAt=1753171686086"
+                                alt="">
                         </div>
                     </div>
                 </div>
             </section>
             <!-- about us -->
 
-            <!-- grid -->
+            <!-- grid frames we create-->
             <div class="discover-grid pb-5">
                 <div class="container">
                     <div class="discover-heading py-5">
@@ -462,7 +352,7 @@
                         <div class="grid-container  ">
 
                             <div class="column mt-3">
-                                <div data-aos="fade-up" class="img-2 wedding">
+                                <div  class="img-2 wedding">
                                     <a href="portfolio.html?section=wedding"> <img class=""
                                             src="https://ik.imagekit.io/dqel2bwws/imgaes/aagam-aangi-new.jpg?updatedAt=1753171682921"></a>
                                     <a href="portfolio.html?section=wedding">
@@ -471,16 +361,17 @@
                                 </div>
                                 <!-- <p class="text-center fs-1 mt-3">Wedding</p> -->
 
-                                <div class="img-2 mt-3" data-aos="fade-right">
+                                <div class="img-2 mt-3" >
                                     <a href="portfolio.html?section=contact">
-                                        <img class="" src="https://ik.imagekit.io/dqel2bwws/imgaes/maternity-new.jpg?updatedAt=1753171740180"></a>
+                                        <img class=""
+                                            src="https://ik.imagekit.io/dqel2bwws/imgaes/maternity-new.jpg?updatedAt=1753171740180"></a>
                                     <a href="portfolio.html?section=contact">
                                     </a>
                                 </div>
 
                                 <!-- <p class="text-center fs-1 mt-3">Pre Wedding</p> -->
 
-                                <div class="img-2 mt-3" data-aos="fade-up">
+                                <div class="img-2 mt-3" 
                                     <a href="portfolio.html?section=post-wedding"> <img
                                             src="https://ik.imagekit.io/dqel2bwws/imgaes/post-wedding-new-1.jpg?updatedAt=1753171750269"></a>
                                     <a href="portfolio.html?section=post-wedding">
@@ -491,7 +382,7 @@
                             </div>
 
 
-                            <div class="column mt-3" data-aos="fade-right">
+                            <div class="column mt-3" >
                                 <div class="img-2 ">
                                     <a href="portfolio.html?section=profile"> <img
                                             src="https://ik.imagekit.io/dqel2bwws/imgaes/parth-nikki-pre-wedding.jpg?updatedAt=1753171742927"></a>
@@ -501,14 +392,15 @@
                                 <!-- <p class="text-center fs-1 mt-3">Pre Wedding</p> -->
 
 
-                                <div class="img-2 mt-3" data-aos="fade-left">
-                                    <a href="portfolio.html?section=travel"><img src="https://ik.imagekit.io/dqel2bwws/imgaes/couple-mew.jpg?updatedAt=1753171704689"></a>
+                                <div class="img-2 mt-3" >
+                                    <a href="portfolio.html?section=travel"><img
+                                            src="https://ik.imagekit.io/dqel2bwws/imgaes/couple-mew.jpg?updatedAt=1753171704689"></a>
                                     <a href="portfolio.html?section=travel">
                                     </a>
                                 </div>
                                 <!-- <p class="text-center fs-1 mt-3">Couple</p> -->
 
-                                <div class="img-2 mt-3 " data-aos="fade-up">
+                                <div class="img-2 mt-3 " >
                                     <a href="portfolio.html?section=pre-wedding"> <img
                                             src="https://ik.imagekit.io/dqel2bwws/imgaes/toddler-new.jpg?updatedAt=1753171768583"></a>
                                     <a href="portfolio.html?section=pre-wedding">
@@ -567,147 +459,16 @@
             </script>
             <!-- grid script -->
 
-            <!-- testimonials  -->
-            <!-- <section class="testimonials py-5 ">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 col-12 text-lg-start text-md-center text-center">
-                            <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
-                                    <img oncontextmenu="return false;" id="testimonial-img"
-                                        src="./imgaes/Testimonail-1-1.jpg" alt="Client Testimonial 1"
-                                        class="img-fluid transition">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-7 col-md-6 col-12 d-flex align-items-center justify-content-center">
-                            <div class="testi-content text-center">
-                                <h2 class="fs-1">Echoes of Excellence</h2>
-                                <p id="testimonial-text" class="transition">The work done by Arihant Studio on my
-                                    wedding is
-                                    exceptional. All the people are very friendly and it seemed like they were more
-                                    interested
-                                    than us to get good photos 😄 The main thing I liked about you all is speed - we
-                                    would get
-                                    high quality reels and photos same day/ next day of the event which is truly
-                                    appreciated ✨🙌
-                                </p>
-                                <span class="d-block transition" id="testimonial-name">Divy & Karina</span>
-                                <ul class="nav nav-pills mb-3 text-center d-flex justify-content-center" id="pills-tab"
-                                    role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link mt-3" id="prev-testimonial" type="button">
-                                            <i class="fa-sharp-duotone fa-thin fa-arrow-left"></i>
-                                        </button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link mt-3" id="next-testimonial" type="button">
-                                            <i class="fa-sharp-duotone fa-thin fa-arrow-right"></i>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-            <!-- testimonials -->
-
-            <!-- testimonials  -->
-            <!-- <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const testimonials = [
-                        {
-                            img: "./imgaes/Testimonail-1-1.jpg",
-                            text: "“The work done by Arihant Studio on my wedding is exceptional. All the people are very friendly and it seemed like they were more interested than us to get good photos 😄 The main thing I liked about you all is speed - we would get high quality reels and photos same day/ next day of the event which is truly appreciated ✨🙌”",
-                            name: "Divy & Karina"
-                        },
-                        {
-                            img: "./imgaes/sparsh-vama-testimonials.jpeg",
-                            text: "“Hyy Tirth Just wanted to thank you for the efforts u had taken!Really loved the outcomeIt was our first time and u made us feel so comfortable in front of the camera Had a great time filming itAnd everyone has appreciated your work as well they all loved it Thank you so much once again💓”",
-                            name: "Sparsh & Vama"
-                        },
-                        {
-                            img: "./imgaes/Dhruv-Testimonails-1.jpg",
-                            text: "“A huge thank you to Tirth Bhai and the entire team for capturing the Dhaja moments so beautifully!Your dedication, creativity, and attention to detail made every shot truly special.The outcome is beyond amazing. Grateful for your hard work and talent! 📸✨”",
-                            name: "Dhruv Puj"
-                        },
-                        // {
-                        //     img: "./imgaes/Dhruv-testimonials-1.jpg",
-                        //     text: "“A huge thank you to Tirth Bhai and the entire team for capturing the Dhaja moments so beautifully!Your dedication, creativity, and attention to detail made every shot truly special.The outcome is beyond amazing. Grateful for your hard work and talent! 📸✨”",
-                        //     name: "Sophia & Liam"
-                        // },
-                        // {
-                        //     img: "https://firstsight.design/palette/multi/wp-content/uploads/2020/12/Portfolio_2222@4x.jpg",
-                        //     text: "“Kaya Mason is just an awesome photographer and great person. Even if it’s your first photo session, don’t worry, Kaya will calm you down, give a lot of helpful tips and suggestions. She is so calm and attentive! My entire family was impressed by her and the photographs she took.”",
-                        //     name: "Sophia & Liam"
-                        // },
-                    ];
-
-                    let currentIndex = 0;
-                    const imgElement = document.getElementById("testimonial-img");
-                    const textElement = document.getElementById("testimonial-text");
-                    const nameElement = document.getElementById("testimonial-name");
-
-                    function updateTestimonial(index) {
-                        // Fade out
-                        imgElement.classList.add("fade-out");
-                        textElement.classList.add("fade-out");
-                        nameElement.classList.add("fade-out");
-
-                        setTimeout(() => {
-                            imgElement.src = testimonials[index].img;
-                            textElement.innerHTML = testimonials[index].text;
-                            nameElement.innerHTML = testimonials[index].name;
-
-                            // Fade in
-                            imgElement.classList.remove("fade-out");
-                            textElement.classList.remove("fade-out");
-                            nameElement.classList.remove("fade-out");
-                        }, 500); // Matches the CSS transition duration
-                    }
-
-                    document.getElementById("prev-testimonial").addEventListener("click", function () {
-                        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-                        updateTestimonial(currentIndex);
-                    });
-
-                    document.getElementById("next-testimonial").addEventListener("click", function () {
-                        currentIndex = (currentIndex + 1) % testimonials.length;
-                        updateTestimonial(currentIndex);
-                    });
-                });
-            </script> -->
-            <!-- testimonials -->
-
-            <!-- <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const testiContainer = document.querySelector(".testi-content");
-                    const textElement = document.getElementById("testimonial-text");
-
-                    function adjustHeight() {
-                        let maxHeight = 0;
-                        document.querySelectorAll("#testimonial-text").forEach(text => {
-                            if (text.scrollHeight > maxHeight) {
-                                maxHeight = text.scrollHeight;
-                            }
-                        });
-                        testiContainer.style.minHeight = maxHeight + "px";
-                    }
-
-                    adjustHeight();
-                    window.addEventListener("resize", adjustHeight);
-                });
-
-            </script> -->
 
 
             <!-- sparsh and vama -->
             <section class="sparsh-vama">
                 <div class="video-wrapper">
-                    <video id="sparsh-vama-video" autoplay muted loop playsinline controlsList="nodownload" disablepictureinpicture class="img-fluid" >
-                        <source src="https://ik.imagekit.io/loh3uvdal/O%20Beliya%20__%20Save%20the%20date%20__%20Sparsh%20&%20Vama.mp4?updatedAt=1753466100680" type="video/mp4">
+                    <video id="sparsh-vama-video" autoplay muted loop playsinline controlsList="nodownload"
+                        disablepictureinpicture class="img-fluid">
+                        <source
+                            src="https://ik.imagekit.io/loh3uvdal/O%20Beliya%20__%20Save%20the%20date%20__%20Sparsh%20&%20Vama.mp4?updatedAt=1753466100680"
+                            type="video/mp4">
                     </video>
                     <div id="videoOverlay" class="video-overlay"></div>
                 </div>
@@ -715,8 +476,8 @@
                     <i class="fa-regular fa-play"></i> <!-- Only Unmute Icon -->
                 </div>
             </section>
-            <!-- sparsh and vama -->
 
+            <!-- sparsh and vama script-->
             <script>
                 const video = document.getElementById("sparsh-vama-video");
                 const muteToggle = document.getElementById("muteToggle");
@@ -807,103 +568,6 @@
 
             </script>
 
-            <!-- bg -->
-            <!-- <section>
-                <div oncontextmenu="return false;" class="shooting">
-                    <div class="shooting-content text-center">
-                        <a href="#" id="playButton">PLAY</a>
-                    </div>
-                    <video id="videoPlayer" style="display: none;" controls>
-                        <source src="./videos/Save the date - Sparsh & Vama.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-
-                    <button class="mt-3" id="closeButton" style="display: none;"><i
-                            class="fa-thin fa-xmark"></i></button>
-                </div>
-            </section> -->
-
-            <!-- bg script-->
-            <!-- <script>
-                document.getElementById('playButton').addEventListener('click', function (event) {
-                    event.preventDefault(); // Prevent the default action (i.e., navigation)
-                    var video = document.getElementById('videoPlayer');
-                    var closeButton = document.getElementById('closeButton');
-
-                    video.style.display = 'block';  // Show the video
-                    closeButton.style.display = 'block';  // Show the close button
-
-                    // Add transition effect for opacity
-                    setTimeout(function () {
-                        video.style.opacity = 1;  // Make the video visible with fade-in effect
-                        closeButton.style.opacity = 1;  // Make the close button visible with fade-in effect
-                    }, 10);
-
-                    video.play();  // Play the video
-                });
-
-                // Close the video when the close button is clicked
-                document.getElementById('closeButton').addEventListener('click', function () {
-                    var video = document.getElementById('videoPlayer');
-                    var closeButton = document.getElementById('closeButton');
-
-                    video.pause();  // Stop the video
-                    video.currentTime = 0;  // Reset the video to the start
-
-                    // Fade out effect
-                    video.style.opacity = 0;  // Fade the video out
-                    closeButton.style.opacity = 0;  // Fade the close button out
-
-                    // After fade out, hide the elements completely
-                    setTimeout(function () {
-                        video.style.display = 'none';  // Hide the video
-                        closeButton.style.display = 'none';  // Hide the close button
-                    }, 500);  // Delay to match the fade-out duration
-                });
-
-                // Hide video when the Escape key is pressed
-                document.addEventListener('keydown', function (event) {
-                    if (event.key === 'Escape') { // Check if the pressed key is the Escape key
-                        var video = document.getElementById('videoPlayer');
-                        var closeButton = document.getElementById('closeButton');
-
-                        video.pause();  // Stop the video
-                        video.currentTime = 0;  // Reset the video to the start
-
-                        // Fade out effect
-                        video.style.opacity = 0;  // Fade the video out
-                        closeButton.style.opacity = 0;  // Fade the close button out
-
-                        // After fade out, hide the elements completely
-                        setTimeout(function () {
-                            video.style.display = 'none';  // Hide the video
-                            closeButton.style.display = 'none';  // Hide the close button
-                        }, 500);  // Delay to match the fade-out duration
-                    }
-                });
-
-                // Hide video when it finishes playing
-                document.getElementById('videoPlayer').addEventListener('ended', function () {
-                    var video = document.getElementById('videoPlayer');
-                    var closeButton = document.getElementById('closeButton');
-
-                    // Fade out effect
-                    video.style.opacity = 0;  // Fade the video out
-                    closeButton.style.opacity = 0;  // Fade the close button out
-
-                    // After fade out, hide the elements completely
-                    setTimeout(function () {
-                        video.style.display = 'none';  // Hide the video
-                        closeButton.style.display = 'none';  // Hide the close button
-                    }, 500);  // Delay to match the fade-out duration
-                });
-
-
-
-
-            </script> -->
-            <!-- bg script-->
-
             <!-- Reels -->
             <section class="container py-4">
                 <div class="reels-heading text-center py-4">
@@ -913,7 +577,9 @@
                     <div class="item">
                         <div>
                             <video class="js-player" crossorigin playsinline>
-                                <source src="https://ik.imagekit.io/loh3uvdal/Save%20the%20date-reel.mp4?updatedAt=1753467559480" type="video/mp4">
+                                <source
+                                    src="https://ik.imagekit.io/loh3uvdal/Save%20the%20date-reel.mp4?updatedAt=1753467559480"
+                                    type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -921,7 +587,8 @@
                     <div class="item">
                         <div>
                             <video class="js-player" crossorigin playsinline>
-                                <source src="https://ik.imagekit.io/loh3uvdal/Reel-3.mp4?updatedAt=1753468527071" type="video/mp4">
+                                <source src="https://ik.imagekit.io/loh3uvdal/Reel-3.mp4?updatedAt=1753468527071"
+                                    type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -929,28 +596,34 @@
                     <div class="item">
                         <div>
                             <video class="js-player" crossorigin playsinline>
-                                <source src="https://ik.imagekit.io/loh3uvdal/Saiyam%20&%20Anisha%20-%20Mudberry%20(1).mp4?updatedAt=1753467869473" type="video/mp4">
+                                <source
+                                    src="https://ik.imagekit.io/loh3uvdal/Saiyam%20&%20Anisha%20-%20Mudberry%20(1).mp4?updatedAt=1753467869473"
+                                    type="video/mp4">
                             </video>
                         </div>
                     </div>
                     <div class="item">
                         <div>
                             <video class="js-player" crossorigin playsinline>
-                                <source src="https://ik.imagekit.io/loh3uvdal/Reel-6.mp4?updatedAt=1753467690938" type="video/mp4">
+                                <source src="https://ik.imagekit.io/loh3uvdal/Reel-6.mp4?updatedAt=1753467690938"
+                                    type="video/mp4">
                             </video>
                         </div>
                     </div>
                     <div class="item">
                         <div>
                             <video class="js-player" crossorigin playsinline>
-                                <source src="https://ik.imagekit.io/loh3uvdal/She%20said%20yes.mp4?updatedAt=1753468245666" type="video/mp4">
+                                <source
+                                    src="https://ik.imagekit.io/loh3uvdal/She%20said%20yes.mp4?updatedAt=1753468245666"
+                                    type="video/mp4">
                             </video>
                         </div>
                     </div>
                     <div class="item">
                         <div>
                             <video class="js-player" crossorigin playsinline>
-                                <source src="https://ik.imagekit.io/loh3uvdal/Deep&Anusha.mp4?updatedAt=1754068628005" type="video/mp4">
+                                <source src="https://ik.imagekit.io/loh3uvdal/Deep&Anusha.mp4?updatedAt=1754068628005"
+                                    type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -1082,7 +755,6 @@
             </script>
             <!-- reels script -->
 
-
             <!--you tube  -->
             <section class="youtube py-5">
                 <h1 class="text-center mb-5  mt-3">Forever in Frame</h1>
@@ -1155,8 +827,8 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane testi-img fade show active" id="pills-home" role="tabpanel">
                                     <img oncontextmenu="return false;" id="testimonial-img"
-                                        src="https://ik.imagekit.io/dqel2bwws/imgaes/Divy&karina_testimoinals-2.jpg?updatedAt=1753171717459" alt="Client Testimonial 1"
-                                        class="transition testimonial-img">
+                                        src="https://ik.imagekit.io/dqel2bwws/imgaes/Divy&karina_testimoinals-2.jpg?updatedAt=1753171717459"
+                                        alt="Client Testimonial 1" class="transition testimonial-img">
                                 </div>
                             </div>
 
@@ -1197,7 +869,7 @@
             <!-- testimonials new-->
 
             <!-- testimonials new-->
-           <script>
+            <script>
                 document.addEventListener("DOMContentLoaded", function () {
                     const testimonials = [
                         {
@@ -1271,34 +943,34 @@
             </script>
             <!-- testimonials new-->
 
-           <!-- instagram -->
+            <!-- instagram -->
             <section oncontextmenu="return false;" class="instagram py-5 pt-5 text-center">
                 <h2 class="">Instagram</h2>
                 <div class="row">
                     <div class="insta-img py-5">
                         <div class="row d-flex g-0">
 
-                            <img data-aos="fade-up"
+                            <img 
                                 onclick="window.location.href='https://www.instagram.com/p/Co6m1HgpXq6/?img_index=1'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-2.jpg?updatedAt=1753171730696"
                                 alt="" class="img-fluid">
 
-                            <img data-aos="fade-up"
+                            <img 
                                 onclick="window.location.href='https://www.instagram.com/p/DGK--ZrpiLj/?img_index=1'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/jigar-sangeeta-insta.jpg?updatedAt=1753171735373"
                                 alt="" class="img-fluid">
 
-                            <img data-aos="fade-up"
+                            <img
                                 onclick="window.location.href='https://www.instagram.com/p/DANBA_6IlYo/?img_index=1'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-10.jpg?updatedAt=1753171727859"
                                 alt="" class="img-fluid">
 
-                            <img data-aos="fade-up"
+                            <img 
                                 onclick="window.location.href='https://www.instagram.com/p/C3FpY5Mtcgg/?img_index=1'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-12.jpg?updatedAt=1753171728206"
                                 alt="" class="img-fluid">
 
-                            <img data-aos="fade-up"
+                            <img 
                                 onclick="window.location.href='https://www.instagram.com/p/CxZ5S_jP1PZ/'"
                                 src="https://ik.imagekit.io/dqel2bwws/imgaes/gallery-13.jpg?updatedAt=1753171728250"
                                 alt="" class="img-fluid">
@@ -1312,7 +984,7 @@
             </section>
             <!-- instagram -->
 
-           <!-- footer -->
+            <!-- footer -->
             <section class="footer">
                 <div class="container ">
                     <div class="row p-lg-5 p-md-5 p-2">
@@ -1327,9 +999,11 @@
                             <div class="footer-content mt-lg-0 mt-md-5 mt-5">
                                 <p class="text-center">Social</p>
                                 <ul class="d-flex mb-0 p-0 gap-3 text-center footer-social-links">
-                                    <li><a href="https://www.instagram.com/arihantstudio.in/"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="https://www.instagram.com/arihantstudio.in/"><i
+                                                class="fa-brands fa-instagram"></i></a></li>
                                     <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
-                                    <li><a href="https://www.youtube.com/@arihantstudiosurat"><i class="ri-youtube-line "></i></a></li>
+                                    <li><a href="https://www.youtube.com/@arihantstudiosurat"><i
+                                                class="ri-youtube-line "></i></a></li>
                                 </ul>
                             </div>
 
@@ -1352,7 +1026,8 @@
 
                                     </ul>
                                     <ul class="d-md-flex col-lg-6 col-md-6 col-6">
-                                        <li class="padding-left"><a class="text-dark" href="./gallery.html">Gallery</a></li>
+                                        <li class="padding-left"><a class="text-dark" href="./gallery.html">Gallery</a>
+                                        </li>
                                         <li><a class="text-dark" href="./contact.html">Contact</a></li>
                                     </ul>
                                 </div>
@@ -1386,10 +1061,6 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- slick carousel js -->
 
-        <!-- aos js -->
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <!-- aos js -->
-
         <script>
             $(document).ready(function () {
                 $(".owl-carousel").owlCarousel({
@@ -1409,12 +1080,6 @@
                 $(".owl-carousel").trigger('prev.owl.carousel');
             });
         </script>
-
-        <!-- aos script -->
-        <script>
-            AOS.init();
-        </script>
-        <!-- aos script -->
 
         <!-- about us img script -->
         <script>
@@ -1490,13 +1155,13 @@
         <!-- back to top -->
 
     </div>
-</div>
-
-<script>
-    gsap.registerPlugin(ScrollSmoother);
     
-    ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
+
+    <script>
+        gsap.registerPlugin(ScrollSmoother);
+
+        ScrollSmoother.create({
+            wrapper: "#smooth-wrapper",
             content: "#smooth-content",
             smooth: 2, // Adjust speed (higher = slower)
             effects: true
@@ -1504,15 +1169,34 @@
 
     </script>
 
+  <!-- aos js -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+         <!-- <script src="./js/aos.js"></script> -->
+        <!-- aos js -->
 
+       <!-- aos script -->
+        <script>
+            AOS.init();
+        </script>
+        <!-- aos script -->
+   <script>
+  AOS.init({
+    duration: 1000,  // Animation duration in ms
+    once: true,      // Animate only once
+  });
+</script>
 
-
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script src="script.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="script.js"></script>
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    
+      
+
+
 </body>
 
 </html>
